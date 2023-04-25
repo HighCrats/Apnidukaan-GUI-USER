@@ -11,7 +11,7 @@ function Banner() {
                             We offer modern solutions for growing your business
                         </h1>
                         <h2 data-aos="fade-up" data-aos-delay={400}>
-                            We are team of talented designers making websites with Bootstrap
+                            We are the team HighCrats
                         </h2>
                         <div data-aos="fade-up" data-aos-delay={600}>
                             <div className="text-center text-lg-start">
