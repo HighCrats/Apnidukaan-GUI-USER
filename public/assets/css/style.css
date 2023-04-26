@@ -219,6 +219,10 @@ section {
   align-items: center;
 }
 
+#name:hover{
+  text-decoration: underline;
+}
+
 .navbar li {
   position: relative;
 }
@@ -596,7 +600,7 @@ section {
 # Values
 --------------------------------------------------------------*/
 .values .box {
-  padding: 30px;
+  padding: 2px;
   box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
   text-align: center;
   transition: 0.3s;
@@ -610,7 +614,7 @@ section {
 }
 
 .values .box h3 {
-  font-size: 24px;
+  font-size: 20px;
   color: #012970;
   font-weight: 700;
   margin-bottom: 18px;

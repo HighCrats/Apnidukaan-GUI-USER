@@ -21,9 +21,10 @@ function Subscription() {
                         data-aos-delay={100}
                     >
                         <div className="box">
+                        <span className="featured">Featured</span>
                             <h3 style={{ color: "#07d5c0" }}>Free Plan</h3>
                             <div className="price">
-                                <sup>$</sup>0<span> / mo</span>
+                                <sup>$</sup>0<span> / month</span>
                             </div>
                             <img
                                 src="assets/img/pricing-free.png"
@@ -34,8 +35,6 @@ function Subscription() {
                                 <li>Aida dere</li>
                                 <li>Nec feugiat nisl</li>
                                 <li>Nulla at volutpat dola</li>
-                                <li className="na">Pharetra massa</li>
-                                <li className="na">Massa ultricies mi</li>
                             </ul>
                             <a href="#" className="btn-buy">
                                 Buy Now
@@ -51,7 +50,7 @@ function Subscription() {
                             <span className="featured">Featured</span>
                             <h3 style={{ color: "#65c600" }}>Starter Plan</h3>
                             <div className="price">
-                                <sup>$</sup>19<span> / mo</span>
+                                <sup>$</sup>19<span> / month</span>
                             </div>
                             <img
                                 src="assets/img/pricing-starter.png"
@@ -62,8 +61,6 @@ function Subscription() {
                                 <li>Aida dere</li>
                                 <li>Nec feugiat nisl</li>
                                 <li>Nulla at volutpat dola</li>
-                                <li>Pharetra massa</li>
-                                <li className="na">Massa ultricies mi</li>
                             </ul>
                             <a href="#" className="btn-buy">
                                 Buy Now
@@ -76,9 +73,10 @@ function Subscription() {
                         data-aos-delay={300}
                     >
                         <div className="box">
+                        <span className="featured">Featured</span>
                             <h3 style={{ color: "#ff901c" }}>Business Plan</h3>
                             <div className="price">
-                                <sup>$</sup>29<span> / mo</span>
+                                <sup>$</sup>29<span> / month</span>
                             </div>
                             <img
                                 src="assets/img/pricing-business.png"
@@ -89,8 +87,6 @@ function Subscription() {
                                 <li>Aida dere</li>
                                 <li>Nec feugiat nisl</li>
                                 <li>Nulla at volutpat dola</li>
-                                <li>Pharetra massa</li>
-                                <li>Massa ultricies mi</li>
                             </ul>
                             <a href="#" className="btn-buy">
                                 Buy Now
@@ -103,9 +99,10 @@ function Subscription() {
                         data-aos-delay={400}
                     >
                         <div className="box">
+                        <span className="featured">Featured</span>
                             <h3 style={{ color: "#ff0071" }}>Ultimate Plan</h3>
                             <div className="price">
-                                <sup>$</sup>49<span> / mo</span>
+                                <sup>$</sup>49<span> / month</span>
                             </div>
                             <img
                                 src="assets/img/pricing-ultimate.png"
@@ -116,8 +113,6 @@ function Subscription() {
                                 <li>Aida dere</li>
                                 <li>Nec feugiat nisl</li>
                                 <li>Nulla at volutpat dola</li>
-                                <li>Pharetra massa</li>
-                                <li>Massa ultricies mi</li>
                             </ul>
                             <a href="#" className="btn-buy">
                                 Buy Now

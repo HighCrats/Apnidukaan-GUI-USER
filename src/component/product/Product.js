@@ -12,7 +12,7 @@ function Product() {
             <div className="container" data-aos="fade-up">
                 <header className="section-header">
                     {/* <h2>Portfolio</h2> */}
-                    <p>Check our latest work</p>
+                    <p>Check our latest Product</p>
                 </header>
                 <div className="row" data-aos="fade-up" data-aos-delay={100}>
                     <div className="col-lg-12 d-flex justify-content-center">
@@ -20,9 +20,6 @@ function Product() {
                             <li data-filter="*" className="filter-active">
                                 All
                             </li>
-                            <li data-filter=".filter-app">App</li>
-                            <li data-filter=".filter-card">Card</li>
-                            <li data-filter=".filter-web">Web</li>
                         </ul>
                     </div>
                 </div>
@@ -39,8 +36,8 @@ function Product() {
                                 alt=""
                             />
                             <div className="portfolio-info">
-                                <h4>App 1</h4>
-                                <p>App</p>
+                                {/* <h4>App 1</h4>
+                                <p>App</p> */}
                                 <div className="portfolio-links">
                                     <a
                                         href="assets/img/portfolio/portfolio-1.jpg"
@@ -65,8 +62,8 @@ function Product() {
                                 alt=""
                             />
                             <div className="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
+                                {/* <h4>Web 3</h4>
+                                <p>Web</p> */}
                                 <div className="portfolio-links">
                                     <a
                                         href="assets/img/portfolio/portfolio-2.jpg"
@@ -91,8 +88,8 @@ function Product() {
                                 alt=""
                             />
                             <div className="portfolio-info">
-                                <h4>App 2</h4>
-                                <p>App</p>
+                                {/* <h4>App 2</h4>
+                                <p>App</p> */}
                                 <div className="portfolio-links">
                                     <a
                                         href="assets/img/portfolio/portfolio-3.jpg"
@@ -117,8 +114,8 @@ function Product() {
                                 alt=""
                             />
                             <div className="portfolio-info">
-                                <h4>Card 2</h4>
-                                <p>Card</p>
+                                {/* <h4>Card 2</h4>
+                                <p>Card</p> */}
                                 <div className="portfolio-links">
                                     <a
                                         href="assets/img/portfolio/portfolio-4.jpg"
@@ -143,8 +140,8 @@ function Product() {
                                 alt=""
                             />
                             <div className="portfolio-info">
-                                <h4>Web 2</h4>
-                                <p>Web</p>
+                                {/* <h4>Web 2</h4>
+                                <p>Web</p> */}
                                 <div className="portfolio-links">
                                     <a
                                         href="assets/img/portfolio/portfolio-5.jpg"
@@ -169,8 +166,8 @@ function Product() {
                                 alt=""
                             />
                             <div className="portfolio-info">
-                                <h4>App 3</h4>
-                                <p>App</p>
+                                {/* <h4>App 3</h4>
+                                <p>App</p> */}
                                 <div className="portfolio-links">
                                     <a
                                         href="assets/img/portfolio/portfolio-6.jpg"
@@ -195,8 +192,8 @@ function Product() {
                                 alt=""
                             />
                             <div className="portfolio-info">
-                                <h4>Card 1</h4>
-                                <p>Card</p>
+                                {/* <h4>Card 1</h4>
+                                <p>Card</p> */}
                                 <div className="portfolio-links">
                                     <a
                                         href="assets/img/portfolio/portfolio-7.jpg"
@@ -221,8 +218,8 @@ function Product() {
                                 alt=""
                             />
                             <div className="portfolio-info">
-                                <h4>Card 3</h4>
-                                <p>Card</p>
+                                {/* <h4>Card 3</h4>
+                                <p>Card</p> */}
                                 <div className="portfolio-links">
                                     <a
                                         href="assets/img/portfolio/portfolio-8.jpg"
@@ -247,8 +244,8 @@ function Product() {
                                 alt=""
                             />
                             <div className="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
+                                {/* <h4>Web 3</h4>
+                                <p>Web</p> */}
                                 <div className="portfolio-links">
                                     <a
                                         href="assets/img/portfolio/portfolio-9.jpg"

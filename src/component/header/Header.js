@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Header() {
+
+    const { categoryList, error, isLoading } = useSelector((state) => state.category);
 
     return <>
 
@@ -24,10 +27,11 @@ function Header() {
                                 <i class="bi bi-chevron-down"></i>
                             </a>
                             <ul>
-                                <li><a href="">Drop Down 1</a></li>
-                                <li><a href="">Drop Down 2</a></li>
-                                <li><a href="">Drop Down 3</a></li>
-                                <li><a href="">Drop Down 4</a></li>
+                                <div className="navbar-nav w-100">
+                                    {!error && categoryList.map((category, index) => <a key={index} href="" className="nav-item nav-link">
+                                        {category.name.toUpperCase()}
+                                    </a>)}
+                                </div>
                             </ul>
                         </li>
                         <li>
