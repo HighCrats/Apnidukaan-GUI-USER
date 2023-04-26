@@ -16,7 +16,7 @@ function Service() {
                                     data-purecounter-duration={1}
                                     className="purecounter"
                                 />
-                                <p>Happy Clients</p>
+                                <p>Happy Customers</p>
                             </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@ function Service() {
                                     data-purecounter-duration={1}
                                     className="purecounter"
                                 />
-                                <p>Projects</p>
+                                <p>Products</p>
                             </div>
                         </div>
                     </div>

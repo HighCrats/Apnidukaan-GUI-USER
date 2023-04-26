@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Category() {
 
@@ -8,18 +9,17 @@ function Category() {
 
         {/* ======= Values Section ======= */}
         <section id="values" className="values">
-            <div className="container-fluid m-2" data-aos="fade-up">
+            <div className="container" data-aos="fade-up">
                 <header className="section-header">
-                    <p>Awesome Category</p>
+                    <p>Category</p>
                 </header>
-                <div className="row m-5 p-2">
-                    <div style={{ overflow: 'hidden', height: "100px", width: "100%" }} className="col-lg-12 d-flex" data-aos="fade-up" data-aos-delay={200}>
-                        {!error && categoryList.map((category, index) =>
-                            <div key={index} className="box col-lg-1">
-                                <h3 id="name" style={{ padding: "2px" }}>{category.name}</h3>
-                            </div>
-                        )}
-                    </div>
+
+                <div className="row m-4 p-2">
+                    {!error && categoryList.map((category, index) =>
+                        <div className="card p-1 m-4 " style={{ width: "15rem" , border : "1px solid black" , borderRadius : "25px"}}>
+                            <Link className="card-title text-center p-1 text-primary"><b>{category.name.toUpperCase()}</b></Link>
+                        </div>
+                    )}
                 </div>
             </div>
         </section>
