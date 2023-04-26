@@ -4,32 +4,14 @@ function Footer() {
 
         {/* ======= Footer ======= */}
         <footer id="footer" className="footer">
-            <div className="footer-newsletter">
-                <div className="container">
-                    <div className="row justify-content-center">
-                        <div className="col-lg-12 text-center">
-                            <h4>Our Newsletter</h4>
-                            <p>
-                                Tamen quem nulla quae legam multos aute sint culpa legam noster
-                                magna
-                            </p>
-                        </div>
-                        <div className="col-lg-6">
-                            <form action="" method="post">
-                                <input type="email" name="email" />
-                                <input type="submit" defaultValue="Subscribe" />
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <div className="footer-top">
                 <div className="container">
                     <div className="row gy-4">
                         <div className="col-lg-5 col-md-12 footer-info">
                             <a href="index.html" className="logo d-flex align-items-center">
                                 <img src="assets/img/logo.png" alt="" />
-                                <span>FlexStart</span>
+                                <span>ApniDukaan</span>
                             </a>
                             <p>
                                 Cras fermentum odio eu feugiat lide par naso tierra. Justo eget
@@ -52,61 +34,52 @@ function Footer() {
                             </div>
                         </div>
                         <div className="col-lg-2 col-6 footer-links">
-                            <h4>Useful Links</h4>
+                            <h4>Sections</h4>
                             <ul>
                                 <li>
                                     <i className="bi bi-chevron-right" /> <a href="#">Home</a>
                                 </li>
                                 <li>
-                                    <i className="bi bi-chevron-right" /> <a href="#">About us</a>
+                                    <i className="bi bi-chevron-right" /> <a href="#">Category</a>
                                 </li>
                                 <li>
                                     <i className="bi bi-chevron-right" /> <a href="#">Services</a>
                                 </li>
                                 <li>
-                                    <i className="bi bi-chevron-right" />{" "}
-                                    <a href="#">Terms of service</a>
-                                </li>
-                                <li>
-                                    <i className="bi bi-chevron-right" />{" "}
-                                    <a href="#">Privacy policy</a>
+                                    <i className="bi bi-chevron-right" /> <a href="#">Products</a>
                                 </li>
                             </ul>
                         </div>
                         <div className="col-lg-2 col-6 footer-links">
-                            <h4>Our Services</h4>
+                            <h4>Quick Links</h4>
                             <ul>
                                 <li>
-                                    <i className="bi bi-chevron-right" /> <a href="#">Web Design</a>
+                                    <i className="bi bi-chevron-right" /> <a href="#">Instagram</a>
                                 </li>
                                 <li>
                                     <i className="bi bi-chevron-right" />{" "}
-                                    <a href="#">Web Development</a>
+                                    <a href="#">linkedin</a>
                                 </li>
                                 <li>
                                     <i className="bi bi-chevron-right" />{" "}
-                                    <a href="#">Product Management</a>
+                                    <a href="#">facebook</a>
                                 </li>
                                 <li>
-                                    <i className="bi bi-chevron-right" /> <a href="#">Marketing</a>
-                                </li>
-                                <li>
-                                    <i className="bi bi-chevron-right" />{" "}
-                                    <a href="#">Graphic Design</a>
+                                    <i className="bi bi-chevron-right" /> <a href="#">twitter</a>
                                 </li>
                             </ul>
                         </div>
                         <div className="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                             <h4>Contact Us</h4>
                             <p>
-                                A108 Adam Street <br />
-                                New York, NY 535022
+                               Jawarmarg <br />
+                                INDORE, ID 452003
                                 <br />
-                                United States <br />
+                               INDIA <br />
                                 <br />
-                                <strong>Phone:</strong> +1 5589 55488 55
+                                <strong>Phone:</strong> +0731 4240 538
                                 <br />
-                                <strong>Email:</strong> info@example.com
+                                <strong>Email:</strong> highcrats@gmail.com
                                 <br />
                             </p>
                         </div>
