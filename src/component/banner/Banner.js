@@ -26,7 +26,7 @@ function Banner() {
                         </div>
                     </div>
                     <div className="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay={200}>
-                        <img src="assets/img/hero-img.png" className="img-fluid" alt="" />
+                        <img src="assets/img/bannerSideImage.png" className="img-fluid" alt="" />
                     </div>
                 </div>
             </div>

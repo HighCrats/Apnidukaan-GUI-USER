@@ -22,9 +22,9 @@ function Contact() {
                                     <i className="bi bi-geo-alt" />
                                     <h3>Address</h3>
                                     <p>
-                                        A108 Adam Street,
+                                        Jawarmarg,
                                         <br />
-                                        New York, NY 535022
+                                        INDORE, IN 452003
                                     </p>
                                 </div>
                             </div>
@@ -33,9 +33,9 @@ function Contact() {
                                     <i className="bi bi-telephone" />
                                     <h3>Call Us</h3>
                                     <p>
-                                        +1 5589 55488 55
+                                        +0731 4240 538
                                         <br />
-                                        +1 6678 254445 41
+                                        +91 78694 25567
                                     </p>
                                 </div>
                             </div>
@@ -44,20 +44,19 @@ function Contact() {
                                     <i className="bi bi-envelope" />
                                     <h3>Email Us</h3>
                                     <p>
-                                        info@example.com
+                                        highcrats@gmail.com
                                         <br />
-                                        contact@example.com
+                                        apnidukaan@gmail.com
                                     </p>
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="info-box">
                                     <i className="bi bi-clock" />
-                                    <h3>Open Hours</h3>
+                                    <h3>Open Services</h3>
                                     <p>
-                                        Monday - Friday
+                                        24 x 7
                                         <br />
-                                        9:00AM - 05:00PM
                                     </p>
                                 </div>
                             </div>
