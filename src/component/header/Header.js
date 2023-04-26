@@ -65,14 +65,14 @@ function Header() {
                             </Link>
                         </li>
                         <li>
-                            <a className="nav-link scrollto" href="#">
+                            <Link className="nav-link scrollto" to="/signin">
                                 Log In
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a className="nav-link scrollto" href="#">
+                            <Link className="nav-link scrollto" to="/signup">
                                 Register
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                     <i className="bi bi-list mobile-nav-toggle" />
