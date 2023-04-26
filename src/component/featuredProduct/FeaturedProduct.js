@@ -1,57 +1,21 @@
-import { useEffect, useState } from "react";
-import Footer from "../footer/Footer";
-import Header from "../header/Header";
-import { useDispatch } from "react-redux";
-import axios from "axios";
-import apiPoint from '../../api/Web-Api';
+import { useSelector } from "react-redux";
 
-function Product() {
 
-    const [productList, setProductList] = useState([]);
-    const [error, setError] = useState("");
-    const [isLoading, setIsLoading] = useState(true);
+function FeaturedProduct() {
 
-    const dispatch = useDispatch();
-
-    const loadProducts = async () => {
-        try {
-            let response = await axios.get(apiPoint.PRODUCT_DATA);
-            if (response.data.status) {
-                setProductList([...productList, ...response.data.result]);
-                setIsLoading(false);
-            }
-        }
-        catch (err) {
-            setError("Oops! something went wrong..");
-        }
-    }
-
-    useEffect(() => {
-        loadProducts();
-    }, []);
+    const { productList, isLoading, error } = useSelector(state => state.product);
 
     return <>
-
-        <Header />
 
         {/* ======= Portfolio Section ======= */}
         <section id="portfolio" className="portfolio">
             <div className="container" data-aos="fade-up">
                 <header className="section-header">
                     {/* <h2>Portfolio</h2> */}
-                    <p>Check our latest Product</p>
+                    <p>Check our Featured Product</p>
                 </header>
-                <div className="row" data-aos="fade-up" data-aos-delay={100}>
-                    <div className="col-lg-12 d-flex justify-content-center">
-                        <ul id="portfolio-flters">
-                            <li data-filter="*" className="filter-active">
-                                All
-                            </li>
-                        </ul>
-                    </div>
-                </div>
                 <div
-                    className="row gy-4  portfolio-container"
+                    className="row m-4 gy-4 portfolio-container"
                     data-aos="fade-up"
                     data-aos-delay={200}
                 >
@@ -65,7 +29,7 @@ function Product() {
                             <div className="portfolio-info">
                                 <div className="portfolio-links">
                                     <a
-                                        href="assets/img/portfolio/portfolio-1.jpg"
+                                        href={product.thumbnail}
                                         data-gallery="portfolioGallery"
                                         className="portfokio-lightbox"
                                         title="App 1"
@@ -86,10 +50,7 @@ function Product() {
         </section>
         {/* End Portfolio Section */}
 
-        <Footer />
-
     </>
-
 }
 
-export default Product;
+export default FeaturedProduct;
