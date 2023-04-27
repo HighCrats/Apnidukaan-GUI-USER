@@ -16,9 +16,10 @@ function Category() {
 
                 <div className="row m-4 p-2">
                     {!error && categoryList.map((category, index) =>
-                        <div className="card p-1 m-4 " style={{ width: "15rem" , border : "1px solid black" , borderRadius : "25px"}}>
-                            <Link className="card-title text-center p-1 text-primary"><b>{category.name.toUpperCase()}</b></Link>
+                        <div className="card p-1 m-4 " style={{ width: "15rem", border: "1px solid black", borderRadius: "25px" }}>
+                            <Link style={{color : 'slateblue'}} className="card-title  text-center p-1"><b>{category.name.toUpperCase()}</b></Link>
                         </div>
+
                     )}
                 </div>
             </div>
