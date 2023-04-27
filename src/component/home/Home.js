@@ -11,7 +11,7 @@ import { fetchProduct } from "../../redux/Product-Slice";
 
 
 function Home() {
-
+    
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(fetchCategory());

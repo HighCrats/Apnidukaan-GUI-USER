@@ -1,10 +1,15 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { signOut } from "../../redux/User-Slice";
 
 function Header() {
 
     const { categoryList, error, isLoading } = useSelector((state) => state.category);
-
+    const { currentUser } = useSelector((state) => state.user);
+    const dispatch = useDispatch();
+    const userSignOut = ()=>{
+        dispatch(signOut()); 
+    }
     return <>
 
         {/* ======= Header ======= */}
@@ -49,31 +54,38 @@ function Header() {
                                 Subscription
                             </Link>
                         </li>
-                        <li>
+                        {currentUser && <><li>
                             <Link to="/wishlist" className="nav-link scrollto">
                                 Wishlist
                             </Link>
                         </li>
-                        <li>
-                            <Link to="/cart" className="nav-link scrollto">
-                                Cart
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/order" className="nav-link scrollto">
-                                Order
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className="nav-link scrollto" to="/signin">
-                                Log In
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className="nav-link scrollto" to="/signup">
-                                Register
-                            </Link>
-                        </li>
+                            <li>
+                                <Link to="/cart" className="nav-link scrollto">
+                                    Cart
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/order" className="nav-link scrollto">
+                                    Order
+                                </Link>
+                            </li>
+                            <li>
+                                <Link className="nav-link scrollto" onClick={userSignOut}>
+                                    Log Out
+                                </Link>
+                            </li>
+                        </>}
+
+                        {!currentUser && <>
+                            <li>
+                                <Link className="nav-link scrollto" to="/signin">
+                                    Log In
+                                </Link>
+                            </li><li>
+                                <Link className="nav-link scrollto" to="/signup">
+                                    Register
+                                </Link>
+                            </li></>}
                     </ul>
                     <i className="bi bi-list mobile-nav-toggle" />
                 </nav>
