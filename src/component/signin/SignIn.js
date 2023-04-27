@@ -47,7 +47,7 @@ function SignIn() {
                             <label><b>Password</b></label>
                             <input onChange={(event)=>setPassword(event.target.value)} type="password" placeholder="Enter Password" className="form-control" name="password" />
                             <br />
-                            <Link to="#" style={{fontSize:"13px",textDecoration:"underline"}}>forgot password</Link>
+                            <Link to="#" style={{fontSize:"13px",textDecoration:"underline"}}>forgot password ?</Link>
                             <br />
                             <div>
                                 <button type="submit" className="btn btn-primary my-3 me-3">Sign In</button>
