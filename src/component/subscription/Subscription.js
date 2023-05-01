@@ -9,7 +9,7 @@ function Subscription() {
 
         {/* ======= Pricing Section ======= */}
         <section id="pricing" className="pricing">
-            <div className="container" data-aos="fade-up">
+            <div className="container mt-5" data-aos="fade-up">
                 <header className="section-header">
                     {/* <h2>Pricing</h2> */}
                     <p>Check our Pricing</p>
