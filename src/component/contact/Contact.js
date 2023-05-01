@@ -9,7 +9,7 @@ function Contact() {
 
         {/* ======= Contact Section ======= */}
         <section id="contact" className="contact">
-            <div className="container" data-aos="fade-up">
+            <div className="container mt-5" data-aos="fade-up">
                 <header className="section-header">
                     {/* <h2>Contact</h2> */}
                     <p>Contact Us</p>

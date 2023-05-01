@@ -12,26 +12,39 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function SignIn() {
 
-    const [email,setEmail] = useState("");
-    const [password,setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const handleSubmit = async (event)=>{
-       try{ 
-         event.preventDefault();
-         const response = await axios.post(apiPoint.USER_SIGNIN,{email,password});
-         dispatch(setUser(response.data.user));
-         navigate("/");  
-       }
-       catch(err){
-        toast.error("Invalid email or password");
-       }
+
+    const handleForgotPassword = async (event) => {
+        try {
+            event.preventDefault();
+            const response = await axios.post(apiPoint.USER_FORGOT_PASSWORD, { email });
+            if (response.status === 200) {
+                toast.success("Password reset email sent!");
+            }
+        } catch (err) {
+            toast.error("Failed to send reset email");
+        }
+    }
+
+    const handleSubmit = async (event) => {
+        try {
+            event.preventDefault();
+            const response = await axios.post(apiPoint.USER_SIGNIN, { email, password });
+            dispatch(setUser(response.data.user));
+            navigate("/");
+        }
+        catch (err) {
+            toast.error("Invalid email or password");
+        }
     }
 
     return <>
-        <ToastContainer/>
+        <ToastContainer />
         <Header />
-        
+
         <div className="container mt-5 py-5 ">
             <div className="row p-4  border border-2 rounded-4 align-items-center justify-content-center">
                 <div className="col-5">
@@ -41,17 +54,17 @@ function SignIn() {
                             <hr />
 
                             <label><b>Email</b></label>
-                            <input onChange={(event)=>setEmail(event.target.value)} type="email" placeholder="Enter your Email" className="form-control" name="password" />
+                            <input onChange={(event) => setEmail(event.target.value)} type="email" placeholder="Enter your Email" className="form-control" name="password" />
                             <br />
 
                             <label><b>Password</b></label>
-                            <input onChange={(event)=>setPassword(event.target.value)} type="password" placeholder="Enter Password" className="form-control" name="password" />
+                            <input onChange={(event) => setPassword(event.target.value)} type="password" placeholder="Enter Password" className="form-control" name="password" />
                             <br />
-                            <Link to="#" style={{fontSize:"13px",textDecoration:"underline"}}>forgot password ?</Link>
+                            <Link to="#" style={{ fontSize: "13px", textDecoration: "underline" }} onClick={handleForgotPassword}>forgot password ?</Link>
                             <br />
                             <div>
                                 <button type="submit" className="btn btn-primary my-3 me-3">Sign In</button>
-                                <Link to="/signup" style={{fontSize:"13px"}}> Create new account</Link>
+                                <Link to="/signup" style={{ fontSize: "13px" }}> Create new account</Link>
                             </div>
                         </div>
                     </form>
