@@ -54,11 +54,7 @@ function Header() {
                                 Subscription
                             </Link>
                         </li>
-                        {currentUser && <><li>
-                            <Link to="/wishlist" className="nav-link scrollto">
-                                Wishlist
-                            </Link>
-                        </li>
+                        {currentUser && <>
                             <li>
                                 <Link to="/cart" className="nav-link scrollto">
                                     Cart
