@@ -26,6 +26,11 @@ function Header() {
                                 Home
                             </Link>
                         </li>
+
+                        <Link className="nav-link scrollto" to="/sell">
+                                    Sell
+                        </Link>
+                        
                         <li class="dropdown">
                             <a href="">
                                 <span>Category</span>
