@@ -1,12 +1,16 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import UserSlice from "../../redux/User-Slice";
 import axios from "axios";
 import apiPoint from '../../api/Web-Api';
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { setDescProduct } from "../../redux/Description-Slice";
 
 function FeaturedProduct() {
-
+    const dispatch = useDispatch();
     const { productList, isLoading, error } = useSelector(state => state.product);
+    const getProduct=(product)=>{
+        dispatch(setDescProduct(product));
+    }
     const users = useSelector((state) => state.user);
     const navigate = useNavigate();
     let cartItem = []
@@ -48,6 +52,7 @@ function FeaturedProduct() {
                                     <div className="buy d-flex justify-content-between align-items-center">
                                         <div className="price text-success"><h5 className="mt-4">₹{product.price}</h5></div>
                                         <button className="btn btn-danger mt-3"><i onClick={() => addToCart(product)} className="fa-solid fa-cart-shopping "></i></button>
+                                        <Link onClick={()=>getProduct(product)} to="/description" class="btn btn-danger mt-3">View More</Link>
                                     </div><br />
                                 </div>
                             </div>
