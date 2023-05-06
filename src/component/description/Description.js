@@ -2,8 +2,11 @@ import { useSelector } from "react-redux";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import { useEffect, useRef } from "react";
+
 function Description() {
+
   const { descProduct } = useSelector((state) => state.descProduct);
+
   useEffect(()=>{window.scrollTo(0,0)},[])
   console.log(descProduct);
   const mainImageRef = useRef(null);
@@ -27,8 +30,12 @@ function Description() {
         </div>
 
         <div className="container mt-4">
+
+      <div className="site-wrap">
+        <div className="container mt-5">
+
           <div className="row">
-            <div className="col-md-2 col-lg-2 " style={{ float: "left" }}>
+            <div className="col-md-2 col-lg-2 mt-5 p-5" style={{ float: "left" }}>
               <img
                 onClick={handleImageClick}
                 src={descProduct.images[0]}
@@ -49,7 +56,7 @@ function Description() {
                 style={{ boxShadow: "5px 5px 5px", width: 100, height: 100 }}
               />
             </div>
-            <div className="col-lg-5 " style={{ float: "left" }}>
+            <div className="col-lg-5 mt-5 p-5" style={{ float: "left" }}>
               <img
                 id="mainImage"
                 style={{
@@ -65,6 +72,7 @@ function Description() {
                 src={descProduct.thumbnail}
               />
             </div>
+
             <div className="col-md-5">
               <div className="p-3" style={{ boxShadow: "2px 0px 5px" }}>
                 <h1 className="text-dark fs-1" style={{ fontFamily: "arial" }}>
@@ -104,10 +112,18 @@ function Description() {
                 <i className="icon-star text-dark" aria-hidden="true" />
                 <i className="icon-star text-dark" aria-hidden="true" />
               </div>
+
+            <div className="col-md-5 mt-5 p-5">
+              <h3 className="text-dark">Title : {descProduct.title}</h3>
               <br />
-              <h3 className="text-dark"></h3>
+              <h3 className="text-dark">Price : {descProduct.price}</h3>
               <br />
-              <h6 className="text-dark"></h6>
+              <h3 className="text-dark">Category : {descProduct.categoryname}</h3>
+
+              <br />
+              <h3 className="text-dark">Description : {descProduct.description}</h3>
+              <br />
+              <button style={{ fontWeight: '700' }} className="btn btn-primary">Buy Now</button>
             </div>
           </div>
         </div>

@@ -52,7 +52,11 @@ function FeaturedProduct() {
                                     <div className="buy d-flex justify-content-around align-items-center">
                                         <div className="price text-success"><h5 className="mt-4">₹{product.price}</h5></div>
                                         <button className="btn btn-primary mt-3"><i onClick={() => addToCart(product)} className="fa-solid fa-cart-shopping "></i></button>
+
                                         <Link onClick={()=>getProduct(product)} to="/description" class="btn btn-primary mt-3"><i class="fa fa-eye" aria-hidden="true"></i></Link>
+
+                                        <Link onClick={()=>getProduct(product)} to="/description" class="btn btn-primary mt-3 ">More</Link>
+
                                     </div><br />
                                 </div>
                             </div>
