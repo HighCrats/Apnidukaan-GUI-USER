@@ -49,10 +49,10 @@ function FeaturedProduct() {
                                     <h6 className="card-subtitle mb-2 text-muted">Category: {product.categoryname}</h6>
                                     <p className="card-text">
                                         {product.description.substring(0, 30)}</p>
-                                    <div className="buy d-flex justify-content-between align-items-center">
+                                    <div className="buy d-flex justify-content-around align-items-center">
                                         <div className="price text-success"><h5 className="mt-4">₹{product.price}</h5></div>
-                                        <button className="btn btn-danger mt-3"><i onClick={() => addToCart(product)} className="fa-solid fa-cart-shopping "></i></button>
-                                        <Link onClick={()=>getProduct(product)} to="/description" class="btn btn-danger mt-3">View More</Link>
+                                        <button className="btn btn-primary mt-3"><i onClick={() => addToCart(product)} className="fa-solid fa-cart-shopping "></i></button>
+                                        <Link onClick={()=>getProduct(product)} to="/description" class="btn btn-primary mt-3"><i class="fa fa-eye" aria-hidden="true"></i></Link>
                                     </div><br />
                                 </div>
                             </div>

@@ -11,6 +11,7 @@ import SignUp from './component/signup/SignUp';
 import SignIn from './component/signin/SignIn';
 import Sell from './component/sell/Sell';
 import Description from './component/description/Description';
+import Kachra from './component/kachra/kachra';
 
 function App() {
   return <>
@@ -25,6 +26,7 @@ function App() {
       <Route path='/signin' element={<SignIn/>} />
       <Route path='/sell' element={<Sell/>}/>
       <Route path='/description' element={<Description/>} />
+      <Route path='/kachra' element={<Kachra/>} />
 
     </Routes>
   </>

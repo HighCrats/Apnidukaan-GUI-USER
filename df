@@ -1,0 +1,160 @@
+[33mcommit 075d5620b27f0c5d9907ff0b36f7d12a5a724529[m[33m ([m[1;36mHEAD -> [m[1;32majay-first[m[33m, [m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Merge: 25c8350 96b4ae6
+Author: HighCrats <131246898+HighCrats@users.noreply.github.com>
+Date:   Mon May 1 15:45:29 2023 +0530
+
+    Merge pull request #9 from HighCrats/chirag-fifth
+    
+    Add to cart functionality added
+
+[33mcommit 96b4ae6e305bf9b6ca8d2826893c0255e6acb2f1[m
+Author: chiragvakare <chiragvakare2904@gmail.com>
+Date:   Mon May 1 15:39:38 2023 +0530
+
+    Add to cart functionality added
+
+[33mcommit 25c835092738bc2d0b61ca86cdac36e2f3f0b675[m
+Merge: 076c2c2 beb9c5d
+Author: HighCrats <131246898+HighCrats@users.noreply.github.com>
+Date:   Mon May 1 10:29:19 2023 +0530
+
+    Merge pull request #8 from HighCrats/harshu-third
+    
+    category gui & header
+
+[33mcommit beb9c5dc625de0807213da6531810d316266432c[m
+Author: Harshita <harshitasisodiya94@gmail.com>
+Date:   Mon May 1 10:28:15 2023 +0530
+
+    category gui & header
+
+[33mcommit 076c2c2dfd8cb2eb67adef5fd0ac8366002c9a84[m
+Merge: c608401 eaa0dfe
+Author: HighCrats <131246898+HighCrats@users.noreply.github.com>
+Date:   Thu Apr 27 17:07:01 2023 +0530
+
+    Merge pull request #7 from HighCrats/chirag-second
+    
+    product page change + ADD to Wishlist Functionality added
+
+[33mcommit eaa0dfe070f7b5f9f8516bd67416539d98b3c1aa[m
+Author: chiragvakare <chiragvakare2904@gmail.com>
+Date:   Thu Apr 27 17:02:41 2023 +0530
+
+    product page change + ADD to Wishlist Functionality added
+
+[33mcommit c608401b7886387c961c0c5079a6d75b43f3b6a6[m
+Merge: e19b068 99cb1d4
+Author: HighCrats <131246898+HighCrats@users.noreply.github.com>
+Date:   Thu Apr 27 11:27:30 2023 +0530
+
+    Merge pull request #6 from HighCrats/harshu-second
+    
+    infinite scroll of product
+
+[33mcommit 99cb1d44a3f8b5470e741cf9964a9f01b769d8a8[m
+Merge: dad4282 e19b068
+Author: HighCrats <131246898+HighCrats@users.noreply.github.com>
+Date:   Thu Apr 27 11:27:19 2023 +0530
+
+    Merge branch 'master' into harshu-second
+
+[33mcommit e19b068dd76b86bb74830d6ea3ce98b8b194d801[m
+Merge: 484e40a 617f992
+Author: HighCrats <131246898+HighCrats@users.noreply.github.com>
+Date:   Thu Apr 27 11:25:38 2023 +0530
+
+    Merge pull request #5 from HighCrats/chirag-first
+    
+    dynamin nav + product final design
+
+[33mcommit dad4282aae73d0d418076951e371ff13c49fef22[m
+Author: Harshita <harshitasisodiya94@gmail.com>
+Date:   Thu Apr 27 11:23:21 2023 +0530
+
+    infinite scroll of product
+
+[33mcommit 617f992690771bbae6a6e9fa4bc6a3b1ef1c09e5[m
+Author: chiragvakare <chiragvakare2904@gmail.com>
+Date:   Thu Apr 27 11:22:55 2023 +0530
+
+    dynamin nav + product final design
+
+[33mcommit 484e40a1dd781c6557c66efc918971d4bc5e4ee6[m
+Merge: 63deac4 49cb33b
+Author: HighCrats <131246898+HighCrats@users.noreply.github.com>
+Date:   Wed Apr 26 07:44:31 2023 -0400
+
+    Merge pull request #4 from HighCrats/harshu-first
+    
+    product functionality
+
+[33mcommit 49cb33b43ea3b96f4e77d72e2c55067409f31d57[m
+Merge: 693555a 63deac4
+Author: HighCrats <131246898+HighCrats@users.noreply.github.com>
+Date:   Wed Apr 26 07:44:17 2023 -0400
+
+    Merge branch 'master' into harshu-first
+
+[33mcommit 693555a63a89f2c165632ecdc2fa4bdd17cef264[m
+Author: Harshita <harshitasisodiya94@gmail.com>
+Date:   Wed Apr 26 17:10:13 2023 +0530
+
+    product functionality
+
+[33mcommit 63deac428fc71d5c815793979b845dd977489547[m
+Merge: 3555966 b920dee
+Author: HighCrats <131246898+HighCrats@users.noreply.github.com>
+Date:   Wed Apr 26 07:23:52 2023 -0400
+
+    Merge pull request #3 from HighCrats/Correcting-Gui
+    
+    SignIN/SignUp
+
+[33mcommit b920dee6a49e68b43e9f646cb0f786ca75ed3930[m
+Author: chiragvakare <chiragvakare2904@gmail.com>
+Date:   Wed Apr 26 16:52:52 2023 +0530
+
+    SignIN/SignUp
+
+[33mcommit 3555966f573c44de329080679b9f28d1b28d0e11[m
+Merge: 3b4e800 086fba0
+Author: HighCrats <131246898+HighCrats@users.noreply.github.com>
+Date:   Wed Apr 26 00:33:54 2023 -0400
+
+    Merge pull request #2 from HighCrats/lokesh-u
+    
+    add signIn, signUp
+
+[33mcommit 3b4e800fd185125e21d7fb153a6d6e84c0b75169[m
+Merge: 444fa51 f84afc2
+Author: HighCrats <131246898+HighCrats@users.noreply.github.com>
+Date:   Wed Apr 26 00:33:18 2023 -0400
+
+    Merge pull request #1 from HighCrats/harshita-first
+    
+    dynamic category
+
+[33mcommit 086fba04ec39a3a06658620273b1120f34208664[m
+Author: chiragvakare <chiragvakare2904@gmail.com>
+Date:   Tue Apr 25 08:06:21 2023 -0400
+
+    add signIn, signUp
+
+[33mcommit f84afc247ce8f79ce1cd80cc8a2d3eaeb5977795[m
+Author: Harshita <harshitasisodiya94@gmail.com>
+Date:   Tue Apr 25 17:15:03 2023 +0530
+
+    dynamic category
+
+[33mcommit 444fa51c91ab82156ec6067a58001d95cf0227ee[m
+Author: HarshitaSisodiya2810 <harshitasisodiya94@gmail.com>
+Date:   Tue Apr 25 10:12:39 2023 +0530
+
+    user gui
+
+[33mcommit 8682bb786cedb62b7f5f6f179bef43048ae95bd4[m
+Author: HarshitaSisodiya2810 <harshitasisodiya94@gmail.com>
+Date:   Wed Apr 19 17:48:48 2023 +0530
+
+    Initialize project using Create React App
