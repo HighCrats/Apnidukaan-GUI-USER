@@ -1,26 +1,18 @@
 import { useSelector } from "react-redux";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+
 function Description() {
+
   const { descProduct } = useSelector((state) => state.descProduct);
-  console.log(descProduct);
 
   return (
     <>
-      <Header/>
-      <div className="site-wrap mt-5" style={{ marginTop: "-150px" }}>
-        <div className="site-mobile-menu site-navbar-target">
-          <div className="site-mobile-menu-header">
-            <div className="site-mobile-menu-close mt-3">
-              <span className="icon-close2 js-menu-toggle" />
-            </div>
-          </div>
-          <div className="site-mobile-menu-body" />
-        </div>
-
-        <div className="container mt-4">
+      <Header />
+      <div className="site-wrap">
+        <div className="container mt-5">
           <div className="row">
-            <div className="col-md-2 col-lg-2 " style={{ float: "left" }}>
+            <div className="col-md-2 col-lg-2 mt-5 p-5" style={{ float: "left" }}>
               <img
                 src={descProduct.images[0]}
                 className="ml-2 mb-4 p-2"
@@ -37,7 +29,7 @@ function Description() {
                 style={{ boxShadow: "5px 5px 5px", width: 100, height: 100 }}
               />
             </div>
-            <div className="col-lg-5 " style={{ float: "left" }}>
+            <div className="col-lg-5 mt-5 p-5" style={{ float: "left" }}>
               <img
                 id="mainImage"
                 style={{
@@ -51,49 +43,22 @@ function Description() {
                 src={descProduct.thumbnail}
               />
             </div>
-            <div className="col-md-5 ">
-              <h1 className="text-dark">Title : {descProduct.title}</h1>
-              <br />
-              <h3 className="text-dark">
-                Description: {descProduct.description}
-              </h3>
+            <div className="col-md-5 mt-5 p-5">
+              <h3 className="text-dark">Title : {descProduct.title}</h3>
               <br />
               <h3 className="text-dark">Price : {descProduct.price}</h3>
               <br />
-              <h3 className="text-dark"></h3>
-              <h4
-                style={{ textTransform: "capitalize" }}
-                className="text-dark"
-              ></h4>
-              <div>
-                <i
-                  style={{ color: "goldenrod" }}
-                  className="icon-star"
-                  aria-hidden="true"
-                />
-                <i
-                  style={{ color: "goldenrod" }}
-                  className="icon-star"
-                  aria-hidden="true"
-                />
-                <i
-                  style={{ color: "goldenrod" }}
-                  className="icon-star"
-                  aria-hidden="true"
-                />
-                <i className="icon-star text-dark" aria-hidden="true" />
-                <i className="icon-star text-dark" aria-hidden="true" />
-              </div>
+              <h3 className="text-dark">Category : {descProduct.categoryname}</h3>
               <br />
-              <h3 className="text-dark"></h3>
+              <h3 className="text-dark">Description : {descProduct.description}</h3>
               <br />
-              <h6 className="text-dark"></h6>
+              <button style={{ fontWeight: '700' }} className="btn btn-primary">Buy Now</button>
             </div>
           </div>
         </div>
 
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
