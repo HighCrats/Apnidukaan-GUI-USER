@@ -107,7 +107,7 @@ function Contact() {
                                     />
                                 </div>
                                 <div className="col-md-12 text-center">
-                                    <div className="loading">Loading</div>                                    
+                                    <div className="loading">Loading</div>
                                     <div className="sent-message">
                                         Your message has been sent. Thank you!
                                     </div>
