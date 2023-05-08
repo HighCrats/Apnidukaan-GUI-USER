@@ -8,7 +8,7 @@ function ResetPassword() {
 
         <div className="container">
             <div className="row">
-                <div className="col-lg-12 bg-warning" style={{ height: '200px', width: '200px', color: 'black' }}>
+                <div className="col-lg-12 bg-warning" style={{ height: '200px', width: '200px' }}>
                     <h3>Reset Password</h3>
                 </div>
             </div>

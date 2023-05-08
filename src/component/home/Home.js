@@ -11,8 +11,11 @@ import { fetchProduct } from "../../redux/Product-Slice";
 
 
 function Home() {
-    
+
+    useEffect(() => { window.scrollTo(0, 0) }, [])
+
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(fetchCategory());
         dispatch(fetchProduct());

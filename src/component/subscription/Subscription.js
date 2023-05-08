@@ -21,7 +21,7 @@ function Subscription() {
                         data-aos-delay={100}
                     >
                         <div className="box">
-                        <span className="featured">Featured</span>
+                            <span className="featured">Featured</span>
                             <h3 style={{ color: "#07d5c0" }}>Free Plan</h3>
                             <div className="price">
                                 <sup>$</sup>0<span> / month</span>
@@ -73,7 +73,7 @@ function Subscription() {
                         data-aos-delay={300}
                     >
                         <div className="box">
-                        <span className="featured">Featured</span>
+                            <span className="featured">Featured</span>
                             <h3 style={{ color: "#ff901c" }}>Business Plan</h3>
                             <div className="price">
                                 <sup>$</sup>29<span> / month</span>
@@ -99,7 +99,7 @@ function Subscription() {
                         data-aos-delay={400}
                     >
                         <div className="box">
-                        <span className="featured">Featured</span>
+                            <span className="featured">Featured</span>
                             <h3 style={{ color: "#ff0071" }}>Ultimate Plan</h3>
                             <div className="price">
                                 <sup>$</sup>49<span> / month</span>

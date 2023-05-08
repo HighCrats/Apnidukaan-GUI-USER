@@ -4,7 +4,7 @@ function Footer() {
 
         {/* ======= Footer ======= */}
         <footer id="footer" className="footer">
-            
+
             <div className="footer-top">
                 <div className="container">
                     <div className="row gy-4">
@@ -72,10 +72,10 @@ function Footer() {
                         <div className="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                             <h4>Contact Us</h4>
                             <p>
-                               Jawarmarg <br />
+                                Jawarmarg <br />
                                 INDORE, ID 452003
                                 <br />
-                               INDIA <br />
+                                INDIA <br />
                                 <br />
                                 <strong>Phone:</strong> +0731 4240 538
                                 <br />
