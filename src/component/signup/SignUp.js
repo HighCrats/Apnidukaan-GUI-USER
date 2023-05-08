@@ -5,7 +5,7 @@ import axios from "axios";
 import apiPoint from "../../api/Web-Api";
 import "../stylesheet/styles.css";
 import { useEffect, useState } from "react";
-import { ToastContainer} from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 function SignUp() {
   const [name, setName] = useState("");
@@ -15,7 +15,7 @@ function SignUp() {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  useEffect(()=>{window.scrollTo(0,0)},[])
+  useEffect(() => { window.scrollTo(0, 0) }, [])
 
   const validateInputs = () => {
     let errors = {};
@@ -31,8 +31,8 @@ function SignUp() {
     if (!contact) {
       errors.contact = "Contact is Required";
     }
-    else if(contact.length!=10){
-      errors.contact="Contact must be 10 digit";
+    else if (contact.length != 10) {
+      errors.contact = "Contact must be 10 digit";
     }
     return errors;
   };
@@ -62,6 +62,7 @@ function SignUp() {
     <>
       <Header />
       <ToastContainer />
+
       <div className="container mt-5 py-5">
         <div className="row p-4  border border-2 rounded-4">
           <div className="col-6  ">
@@ -70,8 +71,8 @@ function SignUp() {
                 <h1 className="font-weight-bold">Sign Up</h1>
                 <hr />
                 <label htmlFor="name"><b>Name</b></label> {errors.name && (<span style={{ color: "red" }}>{errors.name}</span>)}
-                            <input id="name" style={{textDecoration:"none"}} value={name}  type="text" onChange={(event) => setName(event.target.value)} placeholder="Enter your name" className="form-control" name="name"/>
-                            <br />
+                <input id="name" style={{ textDecoration: "none" }} value={name} type="text" onChange={(event) => setName(event.target.value)} placeholder="Enter your name" className="form-control" name="name" />
+                <br />
                 <label htmlFor="email">
                   <b>Email :</b>
                 </label>{" "}
@@ -89,7 +90,7 @@ function SignUp() {
                 <label htmlFor="password">
                   <b>Password :</b>
                 </label>{" "}
-                 {errors.password && (
+                {errors.password && (
                   <span style={{ color: "red" }}>{errors.password}</span>
                 )}
                 <input
@@ -123,7 +124,7 @@ function SignUp() {
                     onChange={(event) => setContact(event.target.value)}
                     placeholder="Enter your contact"
                     type="number"
-                    name="contact"/>
+                    name="contact" />
                 </div>
                 <br />
 

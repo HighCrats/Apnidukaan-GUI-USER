@@ -10,7 +10,8 @@ import Order from './component/order/Order';
 import SignUp from './component/signup/SignUp';
 import SignIn from './component/signin/SignIn';
 import Description from './component/description/Description';
-import Kachra from './component/kachra/kachra';
+import ResetPassword from './component/resetPassword/ResetPassword';
+import Sales from './component/sell/sales';
 import Sell from './component/sell/Sell';
 
 function App() {
@@ -24,9 +25,12 @@ function App() {
       <Route path='/order' element={<Order />} />
       <Route path='/signup' element={<SignUp />} />
       <Route path='/signin' element={<SignIn/>} />
+      <Route path='/sales' element={<Sales/>}/>
       <Route path='/sell' element={<Sell/>}/>
       <Route path='/description' element={<Description/>} />
-      <Route path='/kachra' element={<Kachra/>} />
+
+      <Route path='/reset-password' element={<ResetPassword/>}/>
+
     </Routes>
   </>
 }

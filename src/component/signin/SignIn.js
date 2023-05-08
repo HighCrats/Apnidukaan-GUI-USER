@@ -9,35 +9,52 @@ import { ToastContainer, toast } from "react-toastify";
 import apiPoint from "../../api/Web-Api";
 import 'react-toastify/dist/ReactToastify.css';
 
-
 function SignIn() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [errors, setErrors] = useState({});
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    useEffect(()=>{window.scrollTo(0,0)},[])
 
-    const handleForgotPassword = async (event) => {
-        try {
-            event.preventDefault();
-            const response = await axios.post(apiPoint.USER_FORGOT_PASSWORD, { email });
-            if (response.status === 200) {
-                toast.success("Password reset email sent!");
-            }
-        } catch (err) {
-            toast.error("Failed to send reset email");
+
+    useEffect(() => { window.scrollTo(0, 0) }, [])
+
+    const validateInputs = () => {
+        let errors = {};
+        if (!email) {
+            errors.email = "Email is Required";
         }
-    }
+        if (!password) {
+            errors.password = "Password is Required";
+        }
+        return errors;
+    };
+
+
 
     const handleSubmit = async (event) => {
         try {
             event.preventDefault();
+
             const response = await axios.post(apiPoint.USER_SIGNIN, { email, password });
             dispatch(setUser(response.data.user));
             navigate("/");
+
+            const errors = validateInputs();
+            if (Object.keys(errors).length === 0) {
+                const response = await axios.post(apiPoint.USER_SIGNIN, { email, password });
+                dispatch(setUser(response.data.user));
+                // toast.info("Sign In Success");
+                navigate("/");
+            }
+            else {
+                setErrors(errors);
+            }
+
         }
         catch (err) {
+            console.log(err);
             toast.error("Invalid email or password");
         }
     }
@@ -54,14 +71,47 @@ function SignIn() {
                             <h1 className="font-weight-bold">Login</h1>
                             <hr />
 
+
                             <label><b>Email</b></label>
                             <input onChange={(event) => setEmail(event.target.value)} type="email" placeholder="Enter your Email" className="form-control" name="password" />
                             <br />
 
                             <label><b>Password</b></label>
                             <input onChange={(event) => setPassword(event.target.value)} type="password" placeholder="Enter Password" className="form-control" name="password" />
+
+                            <label htmlFor="email">
+                                <b>Email :</b>
+                            </label>{" "}
+                            {errors.email && (<span style={{ color: "red" }}>{errors.email}</span>)}
+                            <input
+                                value={email}
+                                id="email"
+                                type="email"
+                                onChange={(event) => setEmail(event.target.value)}
+                                placeholder="Enter your Email"
+                                className="form-control"
+                                name="email"
+                            />
                             <br />
-                            <Link to="#" style={{ fontSize: "13px", textDecoration: "underline" }} onClick={handleForgotPassword}>forgot password ?</Link>
+                            <label htmlFor="password">
+                                <b>Password :</b>
+                            </label>{" "}
+                            {errors.password && (
+                                <span style={{ color: "red" }}>{errors.password}</span>
+                            )}
+                            <input
+                                value={password}
+                                id="password"
+                                type="password"
+                                onChange={(event) => setPassword(event.target.value)}
+                                placeholder="Enter Password"
+                                className="form-control"
+                                name="password"
+                            />
+
+                            <br />
+
+                            <Link to="#" style={{ fontSize: "13px", textDecoration: "underline" }} >forgot password ?</Link>
                             <br />
                             <div>
                                 <button type="submit" className="btn btn-primary my-3 me-3">Sign In</button>
@@ -74,11 +124,10 @@ function SignIn() {
                 <div className="col-lg-5">
                     <img src="assets/img/signin2.avif" className="img-fluid" style={{ height: "auto", width: "100%" }} alt="images" />
                 </div>
-
-
             </div>
         </div>
         <Footer />
     </>
 }
+
 export default SignIn;

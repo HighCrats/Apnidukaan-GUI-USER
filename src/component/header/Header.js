@@ -5,11 +5,15 @@ import { signOut } from "../../redux/User-Slice";
 function Header() {
 
     const { categoryList, error, isLoading } = useSelector((state) => state.category);
+
     const { currentUser } = useSelector((state) => state.user);
+
     const dispatch = useDispatch();
-    const userSignOut = ()=>{
-        dispatch(signOut()); 
+
+    const userSignOut = () => {
+        dispatch(signOut());
     }
+
     return <>
 
         {/* ======= Header ======= */}
@@ -28,9 +32,9 @@ function Header() {
                         </li>
 
                         <Link className="nav-link scrollto" to="/sell">
-                                    Sell
+                            Sell
                         </Link>
-                        
+
                         <li class="dropdown">
                             <a href="">
                                 <span>Category</span>
