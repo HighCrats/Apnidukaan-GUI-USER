@@ -2,7 +2,9 @@ import Footer from "../footer/Footer";
 import Header from "../header/Header";
 import axios from "axios";
 import apiPoint from "../../api/Web-Api"
+
 import React, { useEffect, useState } from "react";
+
 
 function Sell(){
   const [title, setTitle] = useState("");
@@ -12,7 +14,9 @@ function Sell(){
   const [errors, setErrors] = useState({});
   const [imageSrc, setImageSrc] = useState("");
 
+
   useEffect(()=>{window.scrollTo(0,0)},[])
+
   function getFile(event) {
     setBill(event.target.files[0]);
     const file = event.target.files[0];
@@ -45,7 +49,10 @@ function Sell(){
     return errors;
   };
 
+  const handleSubmit = async (event) => {
+
   const sellSubmit = async (event) => {
+
     event.preventDefault();
     const errors = validateInputs();
     if (Object.keys(errors).length === 0) {
@@ -66,7 +73,11 @@ function Sell(){
     <div className="container mt-5 py-5 ">
     <div className="row p-4  border border-2 rounded-4 align-items-center justify-content-center">
         <div className="col-5">
+
+            <form onSubmit={handleSubmit} className="form-group">
+
             <form onSubmit={sellSubmit} className="form-group">
+
                 <div>
                 <h2 className="font-weight-bold text-center">POST YOUR AD</h2>
                             <hr />
@@ -87,7 +98,11 @@ function Sell(){
                                 <div className="col-md-12 d-flex">
                                     <div className="col-md-6 p-3 m-2">
                                         <label htmlFor="bill" id="uploadBtn">{imageSrc &&(<img className="border" src={imageSrc} alt="Preview" width="150" height="150"/>)}</label>
+
+                                        <input onChange={getFile}  id="bill" type="file" accept="image/png" className="form-control" style={{width:"150px"}}/>
+
                                         <input onChange={getFile}  id="bill" type="file" accept="image/jpeg" className="form-control" style={{width:"150px"}}/>
+
                                         <br/>
                                     </div>
                                 </div>

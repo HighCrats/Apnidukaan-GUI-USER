@@ -14,7 +14,6 @@ import ResetPassword from './component/resetPassword/ResetPassword';
 import Sales from './component/sell/sales';
 import Sell from './component/sell/Sell';
 
-
 function App() {
   return <>
     <Routes>
@@ -29,7 +28,9 @@ function App() {
       <Route path='/sales' element={<Sales/>}/>
       <Route path='/sell' element={<Sell/>}/>
       <Route path='/description' element={<Description/>} />
+
       <Route path='/reset-password' element={<ResetPassword/>}/>
+
     </Routes>
   </>
 }
