@@ -1,0 +1,59 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Bike",
+      "thumbnail": "https://www.bikes4sale.in/photos-2/558/558961/ktm-duke-390-bs6-1681925735.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Cars",
+      "thumbnail": "https://imgd.aeplcdn.com/640X480/cw/ucp/stockApiImg/76RMT8T_e2fa91abfb5345e4ba420d41e8fa765e_1_28729175.jpg?q=75"
+    },
+    {
+      "id": 3,
+      "name": "Smartphones",
+      "thumbnail": "https://images.unsplash.com/photo-1606041011872-596597976b25?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=989&q=80"
+    },
+    {
+      "id": 4,
+      "name": "Laptops",
+      "thumbnail": "https://images.pexels.com/photos/18105/pexels-photo.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Mens-Watches",
+      "thumbnail": "https://images.unsplash.com/photo-1623998021450-85c29c644e0d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=957&q=80"
+    },
+    {
+      "id": 6,
+      "name": "Women-Watches",
+      "thumbnail": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=799&q=80"
+    },
+    {
+      "id": 7,
+      "name": "Women-Jewellery",
+      "thumbnail": "https://thumbs.dreamstime.com/z/one-gram-gold-jewellery-sets-traditional-bangles-studio-shop-lokgram-kalyan-maharashtra-india-247562707.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Sunglasses",
+      "thumbnail": "https://images.unsplash.com/photo-1622019450027-a7a0f7311122?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+    },
+    {
+      "id": 9,
+      "name": "Shoes",
+      "thumbnail": "https://wallpapercave.com/wp/wp2896922.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Home-Decoration",
+      "thumbnail": "https://images.unsplash.com/photo-1615874694520-474822394e73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+    },
+    {
+      "id": 12,
+      "name": "Furniture",
+      "thumbnail": "https://cdn.pixabay.com/photo/2015/12/02/23/48/screwdrivers-1073515_960_720.jpg"
+    },
+  ]
+}

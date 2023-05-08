@@ -13,23 +13,10 @@ import 'react-toastify/dist/ReactToastify.css';
 function SignIn() {
 
     const [email, setEmail] = useState("");
-    const [errors, setErrors] = useState({});
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
     useEffect(()=>{window.scrollTo(0,0)},[])
-
-    const validateInputs = () => {
-        let errors = {};
-        if (!email) {
-          errors.email = "Email is Required";
-        }
-        if (!password) {
-          errors.password = "Password is Required";
-        }
-        return errors;
-      };
 
     const handleForgotPassword = async (event) => {
         try {
@@ -46,15 +33,9 @@ function SignIn() {
     const handleSubmit = async (event) => {
         try {
             event.preventDefault();
-            const errors = validateInputs();
-            if (Object.keys(errors).length === 0) {
             const response = await axios.post(apiPoint.USER_SIGNIN, { email, password });
             dispatch(setUser(response.data.user));
             navigate("/");
-            }
-            else {
-                setErrors(errors);
-              }
         }
         catch (err) {
             toast.error("Invalid email or password");
@@ -73,12 +54,12 @@ function SignIn() {
                             <h1 className="font-weight-bold">Login</h1>
                             <hr />
 
-                            <label><b>Email</b></label> {errors.email && (<span style={{ color: "red" }}>{errors.email}</span>)}
-                            <input value={email} id="email" onChange={(event) => setEmail(event.target.value)} type="email" placeholder="Enter your Email" className="form-control" name="email" />
+                            <label><b>Email</b></label>
+                            <input onChange={(event) => setEmail(event.target.value)} type="email" placeholder="Enter your Email" className="form-control" name="password" />
                             <br />
 
-                            <label><b>Password</b></label> {errors.password && (<span style={{ color: "red" }}>{errors.password}</span>)}
-                            <input id="password" value={password} onChange={(event) => setPassword(event.target.value)} type="password" placeholder="Enter Password" className="form-control" name="password" />
+                            <label><b>Password</b></label>
+                            <input onChange={(event) => setPassword(event.target.value)} type="password" placeholder="Enter Password" className="form-control" name="password" />
                             <br />
                             <Link to="#" style={{ fontSize: "13px", textDecoration: "underline" }} onClick={handleForgotPassword}>forgot password ?</Link>
                             <br />
