@@ -49,7 +49,7 @@ function Sell(){
     return errors;
   };
 
-  const handleSubmit = async (event) => {
+
 
   const sellSubmit = async (event) => {
 
@@ -74,7 +74,7 @@ function Sell(){
     <div className="row p-4  border border-2 rounded-4 align-items-center justify-content-center">
         <div className="col-5">
 
-            <form onSubmit={handleSubmit} className="form-group">
+            
 
             <form onSubmit={sellSubmit} className="form-group">
 
@@ -101,7 +101,7 @@ function Sell(){
 
                                         <input onChange={getFile}  id="bill" type="file" accept="image/png" className="form-control" style={{width:"150px"}}/>
 
-                                        <input onChange={getFile}  id="bill" type="file" accept="image/jpeg" className="form-control" style={{width:"150px"}}/>
+                                        {/* <input onChange={getFile}  id="bill" type="file" accept="image/jpeg" className="form-control" style={{width:"150px"}}/> */}
 
                                         <br/>
                                     </div>
