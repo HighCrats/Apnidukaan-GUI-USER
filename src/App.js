@@ -12,6 +12,8 @@ import SignIn from './component/signin/SignIn';
 import Description from './component/description/Description';
 import Kachra from './component/kachra/kachra';
 import Sell from './component/sell/Sell';
+import MyProduct from './component/sell/MyProduct';
+import MyProductDescription from './component/description/MyProductDescription';
 
 function App() {
   return <>
@@ -22,11 +24,13 @@ function App() {
       <Route path='/subscription' element={<Subscription />} />
       <Route path='/cart' element={<Cart />} />
       <Route path='/order' element={<Order />} />
-      <Route path='/signup' element={<SignUp />} />
-      <Route path='/signin' element={<SignIn/>} />
+      <Route path='/signup' element={<SignUp />}/>
+      <Route path='/signin' element={<SignIn/>}/>
       <Route path='/sell' element={<Sell/>}/>
       <Route path='/description' element={<Description/>} />
       <Route path='/kachra' element={<Kachra/>} />
+      <Route path='/myproduct' element={<MyProduct/>} />
+      <Route path='/myproductdescription' element={<MyProductDescription/>} />
     </Routes>
   </>
 }

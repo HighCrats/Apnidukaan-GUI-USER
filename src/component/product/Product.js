@@ -109,7 +109,7 @@ function Product() {
                                             <h4 class="card-title">{product.title}</h4>
                                             <h6 class="card-subtitle mb-2 text-muted">Category: {product.categoryname}</h6>
                                             <p class="card-text">
-                                                {product.description.substring(0, 30)}</p>
+                                                {product.description.substring(0, 30)}. . .</p>
                                             <div class="buy d-flex justify-content-between align-items-center">
                                                 <div class="price text-success"><h5 class="mt-4">₹{product.price}</h5></div>
                                                 <a class="btn btn-danger mt-3"><i onClick={() => addToCart(product.id)} class="fa-solid fa-cart-shopping "></i>

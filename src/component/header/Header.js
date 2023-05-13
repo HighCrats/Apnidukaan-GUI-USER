@@ -26,6 +26,11 @@ function Header() {
                                 Home
                             </Link>
                         </li>
+                        <li>
+                            <Link to="/myproduct" className="nav-link scrollto">
+                                MyProduct
+                            </Link>
+                        </li>
 
                         <Link className="nav-link scrollto" to="/sell">
                                     Sell
