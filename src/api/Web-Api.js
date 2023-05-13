@@ -8,5 +8,6 @@ export default {
     FETCH_CART: '/cart/fetch-cart',
     SELLER_POST: '/sell/sellproduct',
     USER_FORGOT_PASSWORD: '/user/forgot_password',
-    USER_RESET_PASSWORD: '/reset-password'
+    USER_RESET_PASSWORD: '/reset-password',
+    REMOVE_CART_ITEM : '/cart/removeFromCart'
 }

@@ -49,8 +49,6 @@ function Sell(){
     return errors;
   };
 
-  const handleSubmit = async (event) => {
-
   const sellSubmit = async (event) => {
 
     event.preventDefault();
@@ -73,9 +71,6 @@ function Sell(){
     <div className="container mt-5 py-5 ">
     <div className="row p-4  border border-2 rounded-4 align-items-center justify-content-center">
         <div className="col-5">
-
-            <form onSubmit={handleSubmit} className="form-group">
-
             <form onSubmit={sellSubmit} className="form-group">
 
                 <div>

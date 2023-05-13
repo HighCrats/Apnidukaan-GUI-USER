@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { setUser } from "../../redux/User-Slice";
@@ -15,8 +15,7 @@ function SignIn() {
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
-    const dispatch = useDispatch();
-
+    const dispatch = useDispatch();    
 
     useEffect(() => { window.scrollTo(0, 0) }, [])
 
@@ -36,11 +35,6 @@ function SignIn() {
     const handleSubmit = async (event) => {
         try {
             event.preventDefault();
-
-            const response = await axios.post(apiPoint.USER_SIGNIN, { email, password });
-            dispatch(setUser(response.data.user));
-            navigate("/");
-
             const errors = validateInputs();
             if (Object.keys(errors).length === 0) {
                 const response = await axios.post(apiPoint.USER_SIGNIN, { email, password });
@@ -70,14 +64,6 @@ function SignIn() {
                         <div>
                             <h1 className="font-weight-bold">Login</h1>
                             <hr />
-
-
-                            <label><b>Email</b></label>
-                            <input onChange={(event) => setEmail(event.target.value)} type="email" placeholder="Enter your Email" className="form-control" name="password" />
-                            <br />
-
-                            <label><b>Password</b></label>
-                            <input onChange={(event) => setPassword(event.target.value)} type="password" placeholder="Enter Password" className="form-control" name="password" />
 
                             <label htmlFor="email">
                                 <b>Email :</b>
