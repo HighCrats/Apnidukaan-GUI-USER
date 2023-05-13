@@ -17,6 +17,7 @@ function Product() {
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(true);
 
+
     const getProduct = (product) => {
         dispatch(setDescProduct(product));
     }
@@ -35,6 +36,7 @@ function Product() {
             cartItem = [...cartItem, product]
             let response = await axios.post(apiPoint.ADD_TO_CART, { usersId: usersId, cartItem: cartItem, productId: productId });
             toast.success(response.data.message);
+            
         }
         else {
             //toast.warning("You must have to login first");
