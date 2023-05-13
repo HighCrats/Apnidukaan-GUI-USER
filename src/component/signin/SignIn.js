@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { setUser } from "../../redux/User-Slice";
@@ -17,7 +17,9 @@ function SignIn() {
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
+
     const dispatch = useDispatch();
+
 
     useEffect(() => { window.scrollTo(0, 0) }, [])
 
@@ -63,6 +65,7 @@ function SignIn() {
                         <div>
                             <h1 className="font-weight-bold">Login</h1>
                             <hr />
+
                             <label htmlFor="email">
                                 <b>Email :</b>
                             </label>{" "}

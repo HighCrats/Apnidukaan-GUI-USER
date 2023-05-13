@@ -50,7 +50,6 @@ function Sell(){
   };
 
 
-
   const sellSubmit = async (event) => {
 
     event.preventDefault();
@@ -84,8 +83,6 @@ function Sell(){
     <div className="container mt-5 py-5 ">
     <div className="row p-4  border border-2 rounded-4 align-items-center justify-content-center">
         <div className="col-5">
-
-            
 
             <form onSubmit={sellSubmit} className="form-group">
 
