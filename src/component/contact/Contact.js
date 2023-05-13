@@ -91,8 +91,8 @@ function Contact() {
                                     <input
                                         type="text"
                                         className="form-control"
-                                        name="subject"
-                                        placeholder="Subject"
+                                        name="contact"
+                                        placeholder="Your Contact"
                                         required=""
                                     />
                                 </div>

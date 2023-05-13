@@ -5,9 +5,10 @@ import axios from "axios";
 import apiPoint from "../../api/Web-Api";
 import "../stylesheet/styles.css";
 import { useEffect, useState } from "react";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 function SignUp() {
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [contact, setContact] = useState("");
@@ -48,19 +49,19 @@ function SignUp() {
           password,
           contact,
         });
-        window.alert("Sign Up successfull");
         navigate("/signin");
       } else {
         setErrors(errors);
       }
     } catch (err) {
-      window.alert("oops something went wrong");
+      toast.error("Oops! Something went wrong");
     }
   };
 
   return (
     <>
       <Header />
+
       <ToastContainer />
 
       <div className="container mt-5 py-5">
@@ -103,7 +104,6 @@ function SignUp() {
                   name="password"
                 />
                 <br />
-
                 <label htmlFor="contact">
                   <b>Contact :</b>
                 </label> {errors.contact && (
@@ -127,8 +127,6 @@ function SignUp() {
                     name="contact" />
                 </div>
                 <br />
-
-
                 <div>
                   <button type="submit" className="btn btn-primary my-2 me-3">
                     Sign Up
@@ -141,7 +139,6 @@ function SignUp() {
               </div>
             </form>
           </div>
-
           <div className="col-lg-6 hero-img">
             <img
               src="assets/img/signin.webp"
@@ -153,6 +150,7 @@ function SignUp() {
       </div>
 
       <Footer />
+      
     </>
   );
 }

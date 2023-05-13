@@ -49,7 +49,7 @@ function Sell(){
     return errors;
   };
 
-  const handleSubmit = async (event) => {
+
 
   const sellSubmit = async (event) => {
 
@@ -68,6 +68,7 @@ function Sell(){
     }
   };
 
+
   return (
     <>
         <Header />
@@ -77,6 +78,20 @@ function Sell(){
                     <form onSubmit={handleSubmit} className="form-group">
                         <div>
                             <h2 className="font-weight-bold text-center">POST YOUR AD</h2>
+
+    return <>
+    <Header />
+    <div className="container mt-5 py-5 ">
+    <div className="row p-4  border border-2 rounded-4 align-items-center justify-content-center">
+        <div className="col-5">
+
+            
+
+            <form onSubmit={sellSubmit} className="form-group">
+
+                <div>
+                <h2 className="font-weight-bold text-center">POST YOUR AD</h2>
+
                             <hr />
 
                             <label htmlFor="title"><b>Title :</b></label> {errors.title && <span style={{color:"red"}}>{errors.title}</span>}
@@ -98,7 +113,7 @@ function Sell(){
 
                                         <input onChange={getFile}  id="bill" type="file" accept="image/png" className="form-control" style={{width:"150px"}}/>
 
-                                        <input onChange={getFile}  id="bill" type="file" accept="image/jpeg" className="form-control" style={{width:"150px"}}/>
+                                        {/* <input onChange={getFile}  id="bill" type="file" accept="image/jpeg" className="form-control" style={{width:"150px"}}/> */}
 
                                         <br/>
                                     </div>

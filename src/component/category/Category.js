@@ -114,6 +114,7 @@ function Category() {
                                     </div><br />
                                 </div>
                             </div>
+
                         </div>
                             ))}
                     </div>
@@ -133,6 +134,14 @@ function Category() {
                                             <h4 className="card-title">{product.title}</h4>
                                             <h6 className="card-subtitle mb-2 text-muted">
                                                 Category: {product.categoryname}
+
+
+                        </div>)}
+                </div>
+            </div>
+            </div>
+        </section>
+        {/* End Values Section */}
 
 
                                             </h6>
