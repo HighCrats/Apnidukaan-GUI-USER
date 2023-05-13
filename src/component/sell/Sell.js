@@ -2,8 +2,7 @@ import Footer from "../footer/Footer";
 import Header from "../header/Header";
 import axios from "axios";
 import apiPoint from "../../api/Web-Api"
-
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 
 function Sell(){
@@ -61,7 +60,7 @@ function Sell(){
       formData.set("price",price);
       formData.set("title",title);
       const response = await axios.post(apiPoint.SELLER_POST,formData);
-      window.alert("Form data submitted successfully");
+      window.alert("Your Product added successfully");
     } else {
       setErrors(errors);
     }
@@ -102,25 +101,28 @@ function Sell(){
                             <label htmlFor="price"><b>Price : </b></label> {errors.price && <span style={{color:"red"}}>{errors.price}</span>}
                             <input onChange={(e) => setPrice(e.target.value)} value={price} type="number" placeholder="Enter Your Product Price" className="form-control" id="price" />
                             <br/>
-                            <b>Bill : </b> {errors.bill && <span style={{color:"red"}}>{errors.bill}</span>}
+                            <b>Product : </b> {errors.bill && <span style={{color:"red"}}>{errors.bill}</span>}
                             <div className="row border">
                                 <div className="col-md-12 d-flex">
                                     <div className="col-md-6 p-3 m-2">
                                         <label htmlFor="bill" id="uploadBtn">{imageSrc &&(<img className="border" src={imageSrc} alt="Preview" width="150" height="150"/>)}</label>
 
-                                        <input onChange={getFile}  id="bill" type="file" accept="image/png" className="form-control" style={{width:"150px"}}/>
+                                        <input onChange={getFile}  id="bill" type="file" accept="image/jpeg" className="form-control" style={{width:"150px"}}/>
 
-                                        {/* <input onChange={getFile}  id="bill" type="file" accept="image/jpeg" className="form-control" style={{width:"150px"}}/> */}
+
 
                                         <br/>
                                     </div>
                                 </div>
                             </div>
+
+
                             <div>
                                 <button type="submit" className="btn btn-primary my-3 me-3">POST NOW</button>
                             </div>
                         </div>
                     </form>
+
                 </div>
                 <div className="col-lg-5">
                     <img src="assets/img/signin2.avif" className="img-fluid" style={{ height: "auto", width: "100%" }} alt="images" />

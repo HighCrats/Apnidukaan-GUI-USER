@@ -87,6 +87,24 @@ function Product() {
 
                     <div class="container">
                         <div class="row">
+                            {!error && productList.map((product, index) =>
+                                <div key={index} class="col-12 col-md-6 col-lg-4 p-4" >
+                                    <div class="card">
+                                        <img class="card-img p-4" style={{ height: '300px', width: "90%" }} src={product.thumbnail} alt="Vans" />
+                                        <div class="card-img-overlay d-flex justify-content-end">
+                                            <a class="card-link text-danger like">
+                                                <span id="heart"><i onClick={() => AddedToWishlist(product.id)} class="fa fa-heart-o"></i></span>
+                                            </a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title">{product.title}</h4>
+                                            <h6 class="card-subtitle mb-2 text-muted">Category: {product.categoryname}</h6>
+                                            <p class="card-text">
+                                                {product.description.substring(0, 30)}. . .</p>
+                                            <div class="buy d-flex justify-content-between align-items-center">
+                                                <div class="price text-success"><h5 class="mt-4">₹{product.price}</h5></div>
+                                                <a class="btn btn-danger mt-3"><i onClick={() => addToCart(product.id)} class="fa-solid fa-cart-shopping "></i>
+                                                </a>
                             {!error && productList?.map((product, index) =>
                                 <div key={index} className="col-12 col-md-6 col-lg-4 p-4" >
                                     <div className="card">
@@ -103,6 +121,7 @@ function Product() {
 
                                                 <Link onClick={() => getProduct(product)} to="/description" class="btn btn-primary mt-3"><i class="fa fa-eye" aria-hidden="true"></i></Link>
 
+ 
                                             </div><br />
                                         </div>
                                     </div>

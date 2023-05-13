@@ -33,6 +33,11 @@ function Header() {
                                 Home
                             </Link>
                         </li>
+                        <li>
+                            <Link to="/myproduct" className="nav-link scrollto">
+                                MyProduct
+                            </Link>
+                        </li>
 
 
 
