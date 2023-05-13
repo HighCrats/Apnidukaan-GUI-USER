@@ -4,6 +4,7 @@ import axios from "axios";
 import apiPoint from "../../api/Web-Api"
 import { useEffect, useState } from "react";
 
+
 function Sell(){
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -11,6 +12,7 @@ function Sell(){
   const [bill, setBill] = useState([]);
   const [errors, setErrors] = useState({});
   const [imageSrc, setImageSrc] = useState("");
+
 
   useEffect(()=>{window.scrollTo(0,0)},[])
 
@@ -46,6 +48,7 @@ function Sell(){
     return errors;
   };
 
+
   const sellSubmit = async (event) => {
 
     event.preventDefault();
@@ -63,19 +66,32 @@ function Sell(){
     }
   };
 
+
+  return (
+    <>
+        <Header />
+        <div className="container mt-5 py-5">
+            <div className="row p-4 border border-2 rounded-4 align-items-center justify-content-center">
+                <div className="col-5">
+                    <form onSubmit={handleSubmit} className="form-group">
+                        <div>
+                            <h2 className="font-weight-bold text-center">POST YOUR AD</h2>
+
     return <>
     <Header />
     <div className="container mt-5 py-5 ">
     <div className="row p-4  border border-2 rounded-4 align-items-center justify-content-center">
         <div className="col-5">
+
             <form onSubmit={sellSubmit} className="form-group">
 
                 <div>
                 <h2 className="font-weight-bold text-center">POST YOUR AD</h2>
+
                             <hr />
 
                             <label htmlFor="title"><b>Title :</b></label> {errors.title && <span style={{color:"red"}}>{errors.title}</span>}
-                            <input value={title} onChange={(e) => setTitle(e.target.value)}type="text" placeholder="Enter Your Product Title" className="form-control" id="title" />
+                            <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Enter Your Product Title" className="form-control" id="title" />
                             <br />
 
                             <label htmlFor="description"><b>Description : </b></label> {errors.description && <span style={{color:"red"}}>{errors.description}</span>}
@@ -90,26 +106,34 @@ function Sell(){
                                 <div className="col-md-12 d-flex">
                                     <div className="col-md-6 p-3 m-2">
                                         <label htmlFor="bill" id="uploadBtn">{imageSrc &&(<img className="border" src={imageSrc} alt="Preview" width="150" height="150"/>)}</label>
+
                                         <input onChange={getFile}  id="bill" type="file" accept="image/jpeg" className="form-control" style={{width:"150px"}}/>
+
+
+
                                         <br/>
                                     </div>
                                 </div>
                             </div>
 
-                    <div>
-                        <button type="submit" className="btn btn-primary my-3 me-3">POST NOW</button>
-                    </div>
+
+                            <div>
+                                <button type="submit" className="btn btn-primary my-3 me-3">POST NOW</button>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
-            </form>
+                <div className="col-lg-5">
+                    <img src="assets/img/signin2.avif" className="img-fluid" style={{ height: "auto", width: "100%" }} alt="images" />
+                </div>
+            </div>
         </div>
-        <div className="col-lg-5">
-            <img src="assets/img/signin2.avif" className="img-fluid" style={{ height: "auto", width: "100%" }} alt="images" />
-        </div>
-    </div>
-</div>
-
-<Footer />
+        <Footer/>
     </>
+  
+);
+ 
 }
-
+}
 export default Sell;

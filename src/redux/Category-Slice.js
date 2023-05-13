@@ -23,6 +23,7 @@ const CategorySlice = createSlice({
         }).addCase(fetchCategory.rejected, (state, action) => {
             state.isLoading = false;
             state.error = "Error";
+        
         })
     }
 });

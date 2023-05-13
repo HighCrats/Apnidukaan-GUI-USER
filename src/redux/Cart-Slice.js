@@ -7,12 +7,6 @@ export const fetchCart = createAsyncThunk('cart/fetchCart', async (userId) => {
     return response.data[0].cartItems;
 });
 
-export const addItemInToCart = createAsyncThunk('cart/addItemInToCart', async (obj) => {
-    let response = await axios.post(apiPoint.ADD_TO_CART, { userId: obj.userId, productId: obj.productId });
-    if (response.data.status)
-        return response.data;
-});
-
 const CartSlice = createSlice({
     name: 'cart',
     initialState: {
@@ -22,7 +16,7 @@ const CartSlice = createSlice({
     },
     reducers: {
         updateCartItems: (state, action) => {
-            state.cartItems = [...state.cartItems, { productId: action.payload }];
+            state.cartItems = [action.payload];
         }
     },
     extraReducers: (builder) => {
@@ -30,11 +24,7 @@ const CartSlice = createSlice({
             state.cartItems = action.payload;
         }).addCase(fetchCart.rejected, (state) => {
             state.cartError = "Oops! something went wrong";
-        }).addCase(addItemInToCart.fulfilled, (state, action) => {
-            state.flag = true;
-        }).addCase(addItemInToCart.rejected, (state) => {
-            state.cartError = 'Oops! something went wrong';
-        });
+        })
     }
 });
 

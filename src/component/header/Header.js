@@ -1,15 +1,22 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { signOut } from "../../redux/User-Slice";
+import { useNavigate } from "react-router-dom/dist";
 
 function Header() {
 
     const { categoryList, error, isLoading } = useSelector((state) => state.category);
+
     const { currentUser } = useSelector((state) => state.user);
+
     const dispatch = useDispatch();
-    const userSignOut = ()=>{
-        dispatch(signOut()); 
+    let navigate = useNavigate();
+
+    const userSignOut = () => {
+        dispatch(signOut());
+        navigate('/');
     }
+
     return <>
 
         {/* ======= Header ======= */}
@@ -32,10 +39,8 @@ function Header() {
                             </Link>
                         </li>
 
-                        <Link className="nav-link scrollto" to="/sell">
-                                    Sell
-                        </Link>
-                        
+
+
                         <li class="dropdown">
                             <a href="">
                                 <span>Category</span>
@@ -73,6 +78,11 @@ function Header() {
                             <li>
                                 <Link to="/order" className="nav-link scrollto">
                                     Order
+                                </Link>
+                            </li>
+                            <li>
+                                <Link className="nav-link scrollto" to="/sell">
+                                    Sell
                                 </Link>
                             </li>
                             <li>

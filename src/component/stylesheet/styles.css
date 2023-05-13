@@ -1,31 +1,35 @@
-form input{
+form input {
     padding: 0;
     border: 1px solid #ccc;
-    border-left: 0 ;
+    border-left: 0;
     width: 100%;
     color: black
-    /* border-radius: 0 7px 7px 0; */
+        /* border-radius: 0 7px 7px 0; */
 }
 
-form input:focus{
+form input:focus {
     outline: 0;
 }
-label{
+
+label {
     color: #999;
     font-size: 18px;
 }
-.flex{
+
+.flex {
     display: flex;
     justify-content: flex-start;
 }
-.flex input{
+
+.flex input {
     max-width: auto;
     flex: 1 1 300px;
     border-left: 0;
-    border-top-right-radius:5px ;
+    border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-.flex .currency{
+
+.flex .currency {
     padding: 0 10px 0 10px;
     color: #999;
     border: 1px solid #ccc;
@@ -33,5 +37,5 @@ label{
     line-height: 1.5;
     border-radius: 7px 0 0 7px;
     background: #ffffff;
-    
+
 }
