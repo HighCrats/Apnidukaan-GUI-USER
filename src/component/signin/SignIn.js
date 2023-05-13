@@ -8,6 +8,8 @@ import { setUser } from "../../redux/User-Slice";
 import { ToastContainer, toast } from "react-toastify";
 import apiPoint from "../../api/Web-Api";
 import 'react-toastify/dist/ReactToastify.css';
+import WithGoogle from "../googleSignup/Google";
+
 
 function SignIn() {
 
@@ -15,7 +17,9 @@ function SignIn() {
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
-    const dispatch = useDispatch();    
+
+    const dispatch = useDispatch();
+
 
     useEffect(() => { window.scrollTo(0, 0) }, [])
 
@@ -30,8 +34,6 @@ function SignIn() {
         return errors;
     };
 
-
-
     const handleSubmit = async (event) => {
         try {
             event.preventDefault();
@@ -39,22 +41,21 @@ function SignIn() {
             if (Object.keys(errors).length === 0) {
                 const response = await axios.post(apiPoint.USER_SIGNIN, { email, password });
                 dispatch(setUser(response.data.user));
-                // toast.info("Sign In Success");
                 navigate("/");
             }
             else {
                 setErrors(errors);
             }
-
         }
         catch (err) {
-            console.log(err);
             toast.error("Invalid email or password");
         }
     }
 
     return <>
+
         <ToastContainer />
+
         <Header />
 
         <div className="container mt-5 py-5 ">
@@ -94,9 +95,9 @@ function SignIn() {
                                 className="form-control"
                                 name="password"
                             />
-
                             <br />
-
+                            <WithGoogle />
+                            <br />
                             <Link to="#" style={{ fontSize: "13px", textDecoration: "underline" }} >forgot password ?</Link>
                             <br />
                             <div>
@@ -106,13 +107,14 @@ function SignIn() {
                         </div>
                     </form>
                 </div>
-
                 <div className="col-lg-5">
                     <img src="assets/img/signin2.avif" className="img-fluid" style={{ height: "auto", width: "100%" }} alt="images" />
                 </div>
             </div>
         </div>
+
         <Footer />
+
     </>
 }
 

@@ -22,7 +22,7 @@ function Description() {
     <div className="site-wrap">
       <div className="container mt-5">
         <div className="row">
-          <div className="col-md-2 col-lg-2 p-5" style={{ float: "left" }}>
+          <div className="col-lg-2 p-4" style={{ float: "left" }}>
             <img
               onClick={handleImageClick}
               src={descProduct.images[0]}
@@ -43,7 +43,7 @@ function Description() {
               style={{ boxShadow: "5px 5px 5px", width: 100, height: 100 }}
             />
           </div>
-          <div className="col-lg-5 p-5" style={{ float: "left" }}>
+          <div className="col-lg-5 p-3" style={{ float: "left" }}>
             <img
               id="mainImage"
               style={{
@@ -59,7 +59,7 @@ function Description() {
               src={descProduct.thumbnail}
             />
           </div>
-          <div className="col-md-5 p-5">
+          <div className="col-lg-5 p-5">
             <div className="p-3" style={{ boxShadow: "2px 0px 5px" }}>
               <h1 className="text-dark fs-1" style={{ fontFamily: "arial" }}>
                 <span className="text-dark" style={{ fontSize: "45px" }}>
