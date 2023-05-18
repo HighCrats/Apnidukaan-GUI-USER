@@ -2,19 +2,25 @@ import { useSelector } from "react-redux";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import { useEffect, useRef } from "react";
+
 function MyProductDescription() {
+
   const { descProduct } = useSelector((state) => state.descProduct);
+
   useEffect(()=>{window.scrollTo(0,0)},[])
-  console.log(descProduct);
+
   const mainImageRef = useRef(null);
 
   const handleImageClick = (event) => {
     const clickedImageSrc = event.target.src;
     mainImageRef.current.src = clickedImageSrc;
   };
+
   return (
     <>
+
       <Header />
+
       <div className="bg-danger" style={{ marginTop: "110px" }}></div>
       <div className="site-wrap">
         <div className="site-mobile-menu site-navbar-target">
@@ -112,8 +118,12 @@ function MyProductDescription() {
           </div>
         </div>
       </div>
+
       <Footer />
+
     </>
   );
+
 }
+
 export default MyProductDescription;

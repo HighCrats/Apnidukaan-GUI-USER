@@ -7,13 +7,14 @@ function Order() {
 
         <Header />
 
-        <div className="container">
-            <div className="row">
-                <div className="col-lg-12 m-5 p-5">
-                    <h4>Order Component</h4>
-                </div>
+        <section id="portfolio" className="portfolio mt-4">
+            <div className="container" data-aos="fade-up">
+                <header className="section-header">
+                    {/* <h2>Portfolio</h2> */}
+                    <p>All Orders</p>
+                </header>
             </div>
-        </div>
+        </section>
 
         <Footer />
 
