@@ -11,10 +11,14 @@ import SignIn from './component/signin/SignIn';
 import ResetPassword from './component/resetPassword/ResetPassword';
 import Sales from './component/sell/sales';
 import Sell from './component/sell/Sell';
+
+import CategorySecond from './component/category/category2';
+
 import MyProduct from './component/sell/MyProduct';
 import MyProductDescription from './component/description/MyProductDescription';
 import New from './component/description/newDescription';
 import CategorySecond from './component/category/NewCategory';
+
 
 function App() {
   return <>
@@ -27,6 +31,11 @@ function App() {
       <Route path='/cart' element={<Cart />} />
       <Route path='/order' element={<Order />} />
       <Route path='/signup' element={<SignUp />} />
+
+      <Route path='/description' element={<Description/>} />
+      
+      <Route path='/categorySecond' element={<CategorySecond/>}/>
+    
       <Route path='/signin' element={<SignIn />} />
       <Route path='/myproduct' element={<MyProduct />} />
       <Route path='/myproductdescription' element={<MyProductDescription />} />
@@ -35,6 +44,7 @@ function App() {
       <Route path='/new' element={<New />} />
       <Route path='/reset-password' element={<ResetPassword />} />
       <Route path='/categorySecond' element={<CategorySecond/>}/>
+
 
     </Routes>
   </>

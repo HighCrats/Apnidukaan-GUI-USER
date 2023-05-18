@@ -13,7 +13,9 @@ const apiPoint = {
     USER_FORGOT_PASSWORD: "/user/forgot_password",
     USER_RESET_PASSWORD: "/reset-password",
     PRODUCT_BY_CATEGORY: "/product/searchCategory",
+
     REMOVE_CART_ITEM : '/cart/removeFromCart'
+
   };
   
   export default apiPoint;
