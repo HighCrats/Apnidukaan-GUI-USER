@@ -1,5 +1,6 @@
 
 const apiPoint = {
+
   PRODUCT_LIST: "/product/recent-product",
   PRODUCT_DATA: "/product/list",
   CATEGORY_LIST: "/category/list",
@@ -17,6 +18,8 @@ const apiPoint = {
   REMOVE_CART_ITEM: '/cart/removeFromCart'
 };
 
-export default apiPoint;
+
+  export default apiPoint;
+
 
 
