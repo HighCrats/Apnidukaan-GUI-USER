@@ -25,8 +25,11 @@ function Header() {
     }
 
     const loadProducts = async (category) => {
-       
-        };
+
+
+    };
+
+
     return <>
         
         {/* ======= Header ======= */}
@@ -53,7 +56,9 @@ function Header() {
                                 <div className="navbar-nav w-100">
                                    
                                     {!error && categoryList.map((category, index) => <a key={index} href="" className="nav-item nav-link">
-                                       <Link  onClick={() => loadProducts(category.name)}  to="/categorySecond" > { category.name.toUpperCase() }</Link>
+
+                                        <Link onClick={() => loadProducts(category.name)} to="/categorySecond" > {category.name.toUpperCase()}</Link>
+
                                     </a>)}
                                 </div>
                             </ul>
