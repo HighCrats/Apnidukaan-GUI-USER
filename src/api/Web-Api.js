@@ -9,7 +9,8 @@ const apiPoint = {
     SELLER_POST: "/sell/sellproduct",
     USER_FORGOT_PASSWORD: "/user/forgot_password",
     USER_RESET_PASSWORD: "/reset-password",
-    PRODUCT_BY_CATEGORY: "/product/searchCategory"
+    PRODUCT_BY_CATEGORY: "/product/searchCategory",
+    BUY_NOW : "/buyNow/buy-now"
   };
   
   export default apiPoint;

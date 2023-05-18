@@ -1,6 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { signOut } from "../../redux/User-Slice";
+import apiPoint from "../../api/Web-Api";
+import axios from "axios";
+import { useState } from "react";
 
 function Header() {
 
@@ -9,13 +12,16 @@ function Header() {
     const { currentUser } = useSelector((state) => state.user);
 
     const dispatch = useDispatch();
-
+    const [categoryProducts,setCategoryProducts] = useState([]);
     const userSignOut = () => {
         dispatch(signOut());
     }
 
+    const loadProducts = async (category) => {
+       
+        };
     return <>
-
+        
         {/* ======= Header ======= */}
         <header id="header" className="header fixed-top">
             <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -42,11 +48,14 @@ function Header() {
                             </a>
                             <ul>
                                 <div className="navbar-nav w-100">
+                                   
                                     {!error && categoryList.map((category, index) => <a key={index} href="" className="nav-item nav-link">
-                                        {category.name.toUpperCase()}
+                                       <Link  onClick={() => loadProducts(category.name)}  to="/categorySecond" > { category.name.toUpperCase() }</Link>
                                     </a>)}
                                 </div>
                             </ul>
+
+                            
                         </li>
                         <li>
                             <Link to="/product" className="nav-link scrollto">
@@ -96,11 +105,17 @@ function Header() {
                 </nav>
                 {/* .navbar */}
             </div>
+ 
+         
+
+
         </header>
         {/* End Header */}
+         
+       
 
     </>
-
+    
 }
 
 export default Header;

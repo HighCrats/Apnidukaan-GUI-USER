@@ -2,14 +2,56 @@ import { useSelector } from "react-redux";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import { useEffect, useRef } from "react";
+import { useState } from "react";
+import axios from "axios";
+import apiPoint from "../../api/Web-Api";
+import Modal from 'react-modal';
 
 function Description() {
 
   const { descProduct } = useSelector((state) => state.descProduct);
+  const [showForm, setShowForm] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    address: "",
+    contact: "",
+    date: "",
+    paymentMode: "",
+    TotalAmount: "",
+    users_id: ""
+  });
   useEffect(() => { window.scrollTo(0, 0) }, []);
 
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleBuyNowClick = () => {
+    setShowForm(true);
+  };
+
+
+  const handleSubmit = async (event) => {
+    try {
+      event.preventDefault();
+      const response = await axios.post(apiPoint.BUY_NOW, formData);
+      window.alert("Order Placed Successfully");
+      setFormData({ username: "", email: "",address:"", contact: "", date: "", paymentMode: "", TotalAmount: "", users_id: "" });
+      setModalIsOpen(false);
+    } catch (err) {
+      console.log(err)
+      window.alert("Oops! Something went wrong");
+    }
+  };
   const mainImageRef = useRef(null);
+
 
   const handleImageClick = (event) => {
     const clickedImageSrc = event.target.src;
@@ -74,8 +116,85 @@ function Description() {
                 {descProduct.description}
               </h4>
             </div>
+
+            {modalIsOpen && (
+              <Modal isOpen={modalIsOpen} onSubmit={handleSubmit} onRequestClose={() => setModalIsOpen(false)}>
+                <h2>Place Order</h2>
+                <form onSubmit={handleSubmit}>
+                  <input
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    value={formData.username}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="address"
+                    placeholder="Address"
+                    value={formData.address}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="contact"
+                    placeholder="Contact"
+                    value={formData.contact}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="date"
+                    placeholder="Date"
+                    value={formData.date}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="paymentMode"
+                    placeholder="Payment Mode"
+                    value={formData.paymentMode}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <input
+                    type="number"
+                    name="totalAmount"
+                    placeholder="Total Amount"
+                    value={formData.totalAmount}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="users_id"
+                    placeholder="User ID"
+                    value={formData.user_id}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <button type="submit" style={{ fontWeight: '700' }} className="btn btn-primary">
+                    Place Order
+                  </button>
+                </form>
+              </Modal>
+
+            )}
             <div className="p-3 mt-3">
-              <button style={{ fontWeight: '700' }} className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-primary" onClick={() => setModalIsOpen(true)} > Buy Now
+              </button>
             </div>
           </div>
         </div>

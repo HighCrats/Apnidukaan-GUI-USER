@@ -13,6 +13,11 @@ import Description from './component/description/Description';
 import ResetPassword from './component/resetPassword/ResetPassword';
 import Sales from './component/sell/sales';
 import Sell from './component/sell/Sell';
+import ProductByCategory from './component/productByCategory/productByCategory';
+
+import CategorySecond from './component/category/category2';
+
+
 
 function App() {
   return <>
@@ -28,7 +33,8 @@ function App() {
       <Route path='/sales' element={<Sales/>}/>
       <Route path='/sell' element={<Sell/>}/>
       <Route path='/description' element={<Description/>} />
-
+      {/* <Route path='/productByCategory' element={<ProductByCategory/>} /> */}
+      <Route path='/categorySecond' element={<CategorySecond/>}/>
       <Route path='/reset-password' element={<ResetPassword/>}/>
 
     </Routes>

@@ -6,8 +6,10 @@ import apiPoint from "../../api/Web-Api";
 import { setDescProduct } from "../../redux/Description-Slice";
 import { ToastContainer, toast } from "react-toastify";
 import { fetchProductsByCategory } from "../../redux/product-category-slice";
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
 
-function Category() {
+function CategorySecond() {
     const { categoryList } = useSelector((state) => state.category);
     const [productList, setProductList] = useState([]);
     const [error, setError] = useState("");
@@ -20,7 +22,7 @@ function Category() {
     let response = await axios.post(apiPoint.PRODUCT_BY_CATEGORY,{categoryname:category});
     setCategoryProducts(response.data.result);
     console.log(response);
-    return response.data.result && window.scrollTo(1700, 1700) 
+    return response.data.result && window.scrollTo(900, 900) 
     };
 
     const getProduct = (product) => {
@@ -47,6 +49,7 @@ function Category() {
 
     return (
         <React.Fragment>
+            <Header/>
             {/* ======= Values Section ======= */}
             <section id="values" className="values">
                 <div className="container">
@@ -123,13 +126,13 @@ function Category() {
                 </div>
             </section>
 
-
+          <Footer/>
             {/* End Products Section */}
         </React.Fragment>
     );
 }
 
-export default Category;
+export default CategorySecond;
 
 
 
