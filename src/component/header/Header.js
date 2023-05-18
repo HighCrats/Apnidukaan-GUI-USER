@@ -33,13 +33,6 @@ function Header() {
                                 Home
                             </Link>
                         </li>
-                        <li>
-                            <Link to="/myproduct" className="nav-link scrollto">
-                                MyProduct
-                            </Link>
-                        </li>
-
-
 
                         <li class="dropdown">
                             <a href="">
@@ -56,7 +49,7 @@ function Header() {
                         </li>
                         <li>
                             <Link to="/product" className="nav-link scrollto">
-                                Product
+                                All Product
                             </Link>
                         </li>
                         <li>
@@ -86,12 +79,16 @@ function Header() {
                                 </Link>
                             </li>
                             <li>
+                                <Link to="/myproduct" className="nav-link scrollto">
+                                    Seller Product
+                                </Link>
+                            </li>
+                            <li>
                                 <Link className="nav-link scrollto" onClick={userSignOut}>
                                     Log Out
                                 </Link>
                             </li>
                         </>}
-
                         {!currentUser && <>
                             <li>
                                 <Link className="nav-link scrollto" to="/signin">

@@ -39,7 +39,10 @@ function SignIn() {
             event.preventDefault();
             const errors = validateInputs();
             if (Object.keys(errors).length === 0) {
-                const response = await axios.post(apiPoint.USER_SIGNIN, { email, password });
+                const response = await axios.post(apiPoint.USER_SIGNIN, {
+                    email,
+                    password
+                });
                 dispatch(setUser(response.data.user));
                 navigate("/");
             }
@@ -48,7 +51,7 @@ function SignIn() {
             }
         }
         catch (err) {
-            toast.error("Invalid email or password");
+            toast.error("Invalid Email Or Password");
         }
     }
 
@@ -97,9 +100,9 @@ function SignIn() {
                             />
                             <br />
                             <WithGoogle />
-                            <br />
+                            {/* <br />
                             <Link to="#" style={{ fontSize: "13px", textDecoration: "underline" }} >forgot password ?</Link>
-                            <br />
+                            <br /> */}
                             <div>
                                 <button type="submit" className="btn btn-primary my-3 me-3">Sign In</button>
                                 <Link to="/signup" style={{ fontSize: "13px" }}> Create new account</Link>

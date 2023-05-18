@@ -4,7 +4,7 @@ import axios from "axios";
 import apiPoint from '../../api/Web-Api';
 import Spinner from "../spinner/Spinner";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { ToastContainer} from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { Link } from "react-router-dom";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
@@ -18,7 +18,7 @@ function MyProduct() {
     const { cartItems, cartError } = useSelector(state => state.cart);
     const dispatch = useDispatch();
     const users = useSelector((state) => state.user);
-    useEffect(()=>{window.scrollTo(0,0)},[])
+    useEffect(() => { window.scrollTo(0, 0) }, [])
     const loadProducts = async () => {
         try {
             let response = await axios.get(apiPoint.SELLER_PRODUCT + `?page=${page}`);
@@ -51,38 +51,37 @@ function MyProduct() {
     }, []);
 
     return <>
-    <Header/>
-    <section id="portfolio" className="portfolio mt-4">
-        <div className="container" data-aos="fade-up">
-            <header className="section-header">
-                {/* <h2>Portfolio</h2> */}
-                <p>Check our Featured Product</p>
-            </header>
-        </div>
-        <div className="container">
-            <div className="row">
-                {!error && sellerProductList.map((product, index) =>
-                    <div key={index} className="col-12 col-md-6 col-lg-4 p-4" >
-                        <div className="card">
-
-                            <img className="card-img p-3" style={{ height: '300px', width: "90%" }} src={"http://localhost:3010/"+product.bill} alt="Vans" />
-                            <div className="card-body">
-                                <h4 className="card-title">{product.title}</h4>
-                                <p className="card-text">
-                                    {product.description.substring(0, 30)}. . .</p>
-                                <div className="buy d-flex justify-content-around align-items-center">
-                                    <div className="price text-success"><h5 className="mt-4">₹{product.price}</h5></div>
-                                    <button className="btn btn-primary mt-3"><i onClick={() => addToCart(product)} className="fa-solid fa-cart-shopping "></i></button>
-                                    <Link class="btn btn-primary mt-3"><i class="fa fa-eye" aria-hidden="true"></i></Link>
-                                </div><br />
-                            </div>
-                        </div>
-                    </div>)}
+        <Header />
+        <section id="portfolio" className="portfolio mt-4">
+            <div className="container" data-aos="fade-up">
+                <header className="section-header">
+                    {/* <h2>Portfolio</h2> */}
+                    <p>Check Seller Product</p>
+                </header>
             </div>
-        </div>
-    </section>
-    <Footer/>
-</>
+            <div className="container">
+                <div className="row">
+                    {!error && sellerProductList.map((product, index) =>
+                        <div key={index} className="col-12 col-md-6 col-lg-4 p-4" >
+                            <div className="card">
+
+                                <img className="card-img p-3" style={{ height: '300px', width: "90%" }} src={"http://localhost:3010/" + product.bill} alt="Vans" />
+                                <div className="card-body">
+                                    <h4 className="card-title">{product.title}</h4>
+                                    <p className="card-text">
+                                        {product.description.substring(0, 30)}. . .</p>
+                                    <div className="buy d-flex justify-content-around align-items-center">
+                                        <div className="price text-success"><h5 className="mt-4">₹{product.price}</h5></div>
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>)}
+                </div>
+            </div>
+        </section>
+        <Footer />
+    </>
 
 }
 

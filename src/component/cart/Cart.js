@@ -130,11 +130,12 @@ function Cart() {
                                 </h3>
                                 <h4>Add something to make me happy :)</h4>
                                 <Link
+                                style={{fontWeight : '700'}}
                                     to='/'
                                     className="btn btn-primary cart-btn-transform m-3"
                                     data-abc="true"
                                 >
-                                    continue shopping
+                                    Continue Your Shopping
                                 </Link>
                             </div>
                         </div>

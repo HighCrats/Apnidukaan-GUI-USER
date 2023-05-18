@@ -54,7 +54,7 @@ function SignUp() {
         setErrors(errors);
       }
     } catch (err) {
-      toast.error("Oops! Something went wrong");
+      toast.warning("Oops! Something Went Wrong");
     }
   };
 
@@ -150,7 +150,7 @@ function SignUp() {
       </div>
 
       <Footer />
-      
+
     </>
   );
 }
