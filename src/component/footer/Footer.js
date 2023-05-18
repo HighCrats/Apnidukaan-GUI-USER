@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
 
     return <>
@@ -9,10 +11,10 @@ function Footer() {
                 <div className="container">
                     <div className="row gy-4">
                         <div className="col-lg-5 col-md-12 footer-info">
-                            <a href="index.html" className="logo d-flex align-items-center">
+                            <Link to="/" className="logo d-flex align-items-center">
                                 <img src="assets/img/logo.png" alt="" />
                                 <span>ApniDukaan</span>
-                            </a>
+                            </Link>
                             <p>
                                 Cras fermentum odio eu feugiat lide par naso tierra. Justo eget
                                 nada terra videa magna derita valies darta donna mare fermentum

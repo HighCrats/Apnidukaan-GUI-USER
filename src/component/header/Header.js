@@ -1,9 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { signOut } from "../../redux/User-Slice";
-import apiPoint from "../../api/Web-Api";
-import axios from "axios";
+
 import { useState } from "react";
+
+import { useNavigate } from "react-router-dom/dist";
+
 
 function Header() {
 
@@ -12,9 +14,14 @@ function Header() {
     const { currentUser } = useSelector((state) => state.user);
 
     const dispatch = useDispatch();
+
     const [categoryProducts,setCategoryProducts] = useState([]);
+
+    let navigate = useNavigate();
+
     const userSignOut = () => {
         dispatch(signOut());
+        navigate('/');
     }
 
     const loadProducts = async (category) => {
@@ -37,10 +44,6 @@ function Header() {
                             </Link>
                         </li>
 
-                        <Link className="nav-link scrollto" to="/sell">
-                            Sell
-                        </Link>
-
                         <li class="dropdown">
                             <a href="">
                                 <span>Category</span>
@@ -59,7 +62,7 @@ function Header() {
                         </li>
                         <li>
                             <Link to="/product" className="nav-link scrollto">
-                                Product
+                                All Product
                             </Link>
                         </li>
                         <li>
@@ -84,12 +87,21 @@ function Header() {
                                 </Link>
                             </li>
                             <li>
+                                <Link className="nav-link scrollto" to="/sell">
+                                    Sell
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/myproduct" className="nav-link scrollto">
+                                    Seller Product
+                                </Link>
+                            </li>
+                            <li>
                                 <Link className="nav-link scrollto" onClick={userSignOut}>
                                     Log Out
                                 </Link>
                             </li>
                         </>}
-
                         {!currentUser && <>
                             <li>
                                 <Link className="nav-link scrollto" to="/signin">

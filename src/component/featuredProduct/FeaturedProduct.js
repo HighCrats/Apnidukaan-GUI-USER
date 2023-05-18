@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import UserSlice from "../../redux/User-Slice";
 import axios from "axios";
 import apiPoint from '../../api/Web-Api';
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { setDescProduct } from "../../redux/Description-Slice";
 import { ToastContainer, toast } from "react-toastify";
 import { useEffect } from "react";
@@ -34,13 +34,15 @@ function FeaturedProduct() {
             toast.success(response.data.message);
         }
         else {
-            //toast.warning("You must have to login first");
+            toast.warning("You must have to login first");
             navigate("/signin");
         }
     }
 
     return <>
+
         <ToastContainer />
+
         {/* ======= Portfolio Section ======= */}
         <section id="portfolio" className="portfolio">
             <div className="container">
@@ -52,22 +54,21 @@ function FeaturedProduct() {
             <div className="container">
                 <div className="row">
                     {!error && productList?.map((product, index) =>
-                        <div key={index} className="col-12 col-md-6 col-lg-4 p-4" >
-                            <div className="card">
+                        <div key={index} className="col-12 col-md-6 col-lg-4" >
+                            <div className="card border">
 
-                                <img className="card-img p-3" style={{ height: '300px', width: "90%", borderRadius: ' 20%' }} src={product.thumbnail} alt="Vans" />
-                                <div className="card-body">
-                                    <h4 className="card-title">{product.title}</h4>
-                                    <h6 className="card-subtitle mb-2 text-muted">Category: {product.categoryname}</h6>
-                                    <p className="card-text">
+                                <img className="card-img p-3" style={{ height: '300px', width: "90%", borderRadius: ' 20%', margin: 'auto' }} src={product.thumbnail} alt="Vans" />
+                                <div className="card-body" style={{ textAlign: 'center' }}>
+                                    <h4 style={{ fontWeight: '800' }} className="card-title">{product.title.toUpperCase().substring(0, 13)}</h4>
+                                    <h6 style={{ fontWeight: '800' }} className="card-subtitle mb-2 text-muted">Category: {product.categoryname}</h6>
+                                    <p style={{ fontWeight: '700' }} className="card-text">
                                         {product.description.substring(0, 30)} ...</p>
                                     <div className="buy d-flex justify-content-around align-items-center">
-                                        <div className="price text-success"><h5 className="mt-4">₹{product.price}</h5></div>
-                                        <button className="btn btn-primary mt-3"><i onClick={() => addToCart(product)} className="fa-solid fa-cart-shopping "></i></button>
-
-                                        <Link onClick={() => getProduct(product)} to="/description" class="btn btn-primary mt-3"><i class="fa fa-eye" aria-hidden="true"></i></Link>
-
-                                    </div><br />
+                                        <div className="price text-success"><h5 style={{ fontWeight: '950' }} className="mt-4">₹{product.price}</h5></div>
+                                        {/* <button className="btn btn-primary mt-3"><i onClick={() => addToCart(product)} className="fa-solid fa-cart-shopping "></i></button> */}
+                                        <Link style={{ fontWeight: '800' }} onClick={() => getProduct(product)} to="/description" class="btn btn-primary mt-3">View More</Link>
+                                    </div>
+                                    <br />
                                 </div>
                             </div>
                         </div>)}

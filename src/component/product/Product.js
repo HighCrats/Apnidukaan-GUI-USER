@@ -36,10 +36,10 @@ function Product() {
             cartItem = [...cartItem, product]
             let response = await axios.post(apiPoint.ADD_TO_CART, { usersId: usersId, cartItem: cartItem, productId: productId });
             toast.success(response.data.message);
-            
+
         }
         else {
-            //toast.warning("You must have to login first");
+            toast.warning("You must have to login first");
             navigate("/signin");
         }
     }
@@ -73,7 +73,7 @@ function Product() {
             <div className="container mt-5">
                 <header className="section-header">
                     {/* <h2>Portfolio</h2> */}
-                    <p>Check our latest Product</p>
+                    <p>Check Our latest Product</p>
                 </header>
 
                 {isLoading && <Spinner />}
@@ -87,23 +87,22 @@ function Product() {
 
                     <div class="container">
                         <div class="row">
+
                             {!error && productList?.map((product, index) =>
                                 <div key={index} className="col-12 col-md-6 col-lg-4 p-4" >
-                                    <div className="card">
-
-                                        <img className="card-img p-3" style={{ height: '300px', width: "90%" }} src={product.thumbnail} alt="Vans" />
-                                        <div className="card-body">
-                                            <h4 className="card-title">{product.title}</h4>
-                                            <h6 className="card-subtitle mb-2 text-muted">Category: {product.categoryname}</h6>
-                                            <p className="card-text">
+                                    <div className="card border">
+                                        <img className="card-img p-3" style={{ height: '300px', width: "90%", borderRadius: ' 20%', margin: 'auto' }} src={product.thumbnail} alt="Vans" />
+                                        <div className="card-body" style={{ textAlign: 'center' }}>
+                                            <h4 style={{ fontWeight: '800' }} className="card-title">{product.title.substring(0, 14).toUpperCase()}</h4>
+                                            <h6 style={{ fontWeight: '800' }} className="card-subtitle mb-2 text-muted">Category: {product.categoryname}</h6>
+                                            <p style={{ fontWeight: '700' }} className="card-text">
                                                 {product.description.substring(0, 30)}</p>
                                             <div className="buy d-flex justify-content-around align-items-center">
-                                                <div className="price text-success"><h5 className="mt-4">₹{product.price}</h5></div>
-                                                <button className="btn btn-primary mt-3"><i onClick={() => addToCart(product)} className="fa-solid fa-cart-shopping "></i></button>
-
-                                                <Link onClick={() => getProduct(product)} to="/description" class="btn btn-primary mt-3"><i class="fa fa-eye" aria-hidden="true"></i></Link>
-
-                                            </div><br />
+                                                <div className="price text-success"><h5 style={{ fontWeight: '900' }} className="mt-4">₹{product.price}</h5></div>
+                                                {/* <button className="btn btn-primary mt-3"><i onClick={() => addToCart(product)} className="fa-solid fa-cart-shopping "></i></button> */}
+                                                <Link style={{ fontWeight: '700' }} onClick={() => getProduct(product)} to="/new" class="btn btn-primary mt-3">View More</Link>
+                                            </div>
+                                            <br />
                                         </div>
                                     </div>
                                 </div>
