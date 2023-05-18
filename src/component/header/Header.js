@@ -67,7 +67,7 @@ function Header() {
                             </Link>
                         </li>
                         {currentUser && <>
-                            <li>
+                            {/* <li>
                                 <Link to="/cart" className="nav-link scrollto">
                                     Cart
                                 </Link>
@@ -76,7 +76,7 @@ function Header() {
                                 <Link to="/order" className="nav-link scrollto">
                                     Order
                                 </Link>
-                            </li>
+                            </li> */}
                             <li>
                                 <Link className="nav-link scrollto" to="/sell">
                                     Sell

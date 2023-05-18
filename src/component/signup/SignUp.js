@@ -66,7 +66,7 @@ function SignUp() {
 
       <div className="container mt-5 py-5">
         <div className="row p-4  border border-2 rounded-4">
-          <div className="col-6  ">
+          <div className="col-6">
             <form className="form-group" onSubmit={handleSubmit}>
               <div>
                 <h1 className="font-weight-bold">Sign Up</h1>
