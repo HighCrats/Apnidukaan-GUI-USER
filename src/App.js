@@ -14,6 +14,7 @@ import Sell from './component/sell/Sell';
 import MyProduct from './component/sell/MyProduct';
 import MyProductDescription from './component/description/MyProductDescription';
 import New from './component/description/newDescription';
+import CategorySecond from './component/category/NewCategory';
 
 function App() {
   return <>
@@ -33,6 +34,7 @@ function App() {
       <Route path='/sell' element={<Sell />} />
       <Route path='/new' element={<New />} />
       <Route path='/reset-password' element={<ResetPassword />} />
+      <Route path='/categorySecond' element={<CategorySecond/>}/>
 
     </Routes>
   </>

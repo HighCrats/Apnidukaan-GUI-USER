@@ -26,7 +26,7 @@ function New() {
         <div style={{ height: '100px' }}></div>
 
         <section id="default">
-            <div className="container mt-5 mb-5">
+            <div className="container mb-5">
                 <div className="card">
                     <div className="row g-0">
                         <div className="col-md-6 border-end">
