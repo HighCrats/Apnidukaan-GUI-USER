@@ -81,9 +81,9 @@ function Product() {
                 <InfiniteScroll
                     dataLength={productList.length}
                     next={loadProducts}
-                    hasMore={productList.length < 60}
+                    hasMore={productList.length < 120}
                     loader={<Spinner />}
-                    endMessage={<p>.....</p>}>
+                    endMessage={<p style={{textAlign : 'center'}}>.....</p>}>
 
                     <div class="container">
                         <div class="row">

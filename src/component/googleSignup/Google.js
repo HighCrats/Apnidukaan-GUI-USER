@@ -3,8 +3,11 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import { GoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../redux/User-Slice";
 
 function WithGoogle() {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     return <>
         <div className="main-container">
@@ -14,6 +17,8 @@ function WithGoogle() {
                         const details = jwt_decode(credentialResponse.credential);
                         console.log(details);
                         console.log(credentialResponse);
+                        const user = { name: details.family_name + details.given_name, email: details.email, photo: details.picture, status: true };
+                        dispatch(setUser(user));
                         navigate("/");
                     }}
                     onError={() => {

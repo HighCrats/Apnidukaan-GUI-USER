@@ -1,11 +1,38 @@
+import { ToastContainer, toast } from "react-toastify";
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
+import axios from "axios";
+import apiPoint from "../../api/Web-Api";
+import { useEffect, useState } from "react";
 
 function Contact() {
+
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [contact, setContact] = useState("");
+    const [message, setMessage] = useState("");
+
+    useEffect(() => { window.scrollTo(0, 0) }, []);
+
+    const handleSubmit = async (event) => {
+        try {
+            event.preventDefault();
+            const response = await axios.post(apiPoint.USER_CONTACT, {
+                name,
+                email,
+                message,
+                contact,
+            });
+        } catch (err) {
+            toast.warning("Oops! Something Went Wrong");
+        }
+    };
 
     return <>
 
         <Header />
+
+        <ToastContainer />
 
         {/* ======= Contact Section ======= */}
         <section id="contact" className="contact">
@@ -57,6 +84,7 @@ function Contact() {
                                     <p>
                                         24 x 7
                                         <br />
+                                        All Time
                                     </p>
                                 </div>
                             </div>
@@ -66,13 +94,18 @@ function Contact() {
                         <form
                             action=""
                             method=""
-                            className="php-email-form"
+                            className="form-group"
+                            onSubmit={handleSubmit}
                         >
                             <div className="row gy-4">
                                 <div className="col-md-6">
                                     <input
+                                    style={{textDecoration : 'none'}}
                                         type="text"
                                         name="name"
+                                        id="name"
+                                        value={name}
+                                        onChange={(event) => setName(event.target.value)}
                                         className="form-control"
                                         placeholder="Your Name"
                                         required=""
@@ -81,6 +114,9 @@ function Contact() {
                                 <div className="col-md-6 ">
                                     <input
                                         type="email"
+                                        value={email}
+                                        id="email"
+                                        onChange={(event) => setEmail(event.target.value)}
                                         className="form-control"
                                         name="email"
                                         placeholder="Your Email"
@@ -90,6 +126,11 @@ function Contact() {
                                 <div className="col-md-12">
                                     <input
                                         type="text"
+                                        id="contact"
+                                        min={0}
+                                        maxLength={15}
+                                        value={contact}
+                                        onChange={(event) => setContact(event.target.value)}
                                         className="form-control"
                                         name="contact"
                                         placeholder="Your Contact"
@@ -100,18 +141,17 @@ function Contact() {
                                     <textarea
                                         className="form-control"
                                         name="message"
-                                        rows={6}
+                                        id="message"
+                                        value={message}
+                                        onChange={(event) => setMessage(event.target.value)}
+                                        rows={8}
                                         placeholder="Message"
                                         required=""
                                         defaultValue={""}
                                     />
                                 </div>
                                 <div className="col-md-12 text-center">
-                                    <div className="loading">Loading</div>
-                                    <div className="sent-message">
-                                        Your message has been sent. Thank you!
-                                    </div>
-                                    <button type="submit">Send Message</button>
+                                    <button style={{ fontWeight: '700' }} className="btn btn-primary" type="submit">Send Message</button>
                                 </div>
                             </div>
                         </form>
