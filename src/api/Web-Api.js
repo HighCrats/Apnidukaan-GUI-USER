@@ -1,5 +1,6 @@
 
 const apiPoint = {
+
   PRODUCT_LIST: "/product/recent-product",
   PRODUCT_DATA: "/product/list",
   CATEGORY_LIST: "/category/list",
@@ -15,6 +16,8 @@ const apiPoint = {
   USER_SMS:'/smsUser/sms'
 };
 
-export default apiPoint;
+
+  export default apiPoint;
+
 
 
