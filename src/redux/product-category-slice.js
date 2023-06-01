@@ -2,17 +2,12 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import apiPoint from '../api/Web-Api';
 
-
 export const fetchProductsByCategory = createAsyncThunk(
   "product/fetchProductsByCategory",
   async (categoryName) => {
     console.log(categoryName);
-    // let response = await axios.get(apiPoint.PRODUCT_BY_CATEGORY,{categoryname:categoryName});
-    // console.log(response.data);
-    // return response.data.result
   }
 );
-
 
 const CProductSlice = createSlice({
   name: 'product',

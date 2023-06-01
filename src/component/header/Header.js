@@ -10,6 +10,7 @@ function Header() {
     const { currentUser } = useSelector((state) => state.user);
 
     const dispatch = useDispatch();
+
     let navigate = useNavigate();
 
     const userSignOut = () => {
@@ -37,7 +38,6 @@ function Header() {
                                 Home
                             </Link>
                         </li>
-
                         <li class="dropdown">
                             <a href="">
                                 <span>Category</span>
@@ -61,11 +61,7 @@ function Header() {
                                 Contact
                             </Link>
                         </li>
-                        <li>
-                            <Link to="/subscription" className="nav-link scrollto">
-                                Subscription
-                            </Link>
-                        </li>
+
                         {currentUser && <>
                             {/* <li>
                                 <Link to="/cart" className="nav-link scrollto">
@@ -78,8 +74,13 @@ function Header() {
                                 </Link>
                             </li> */}
                             <li>
+                                <Link to="/subscription" className="nav-link scrollto">
+                                    Subscription
+                                </Link>
+                            </li>
+                            <li>
                                 <Link className="nav-link scrollto" to="/sell">
-                                    Sell
+                                    Sell Profile
                                 </Link>
                             </li>
                             <li>

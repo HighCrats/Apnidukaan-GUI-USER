@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 const slice = createSlice({
     name:'description',
     initialState:{
@@ -12,4 +13,5 @@ const slice = createSlice({
 });
 
 export const {setDescProduct} = slice.actions;
+
 export default slice.reducer;

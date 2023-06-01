@@ -7,7 +7,7 @@ function Footer() {
         {/* ======= Footer ======= */}
         <footer id="footer" className="footer">
 
-            <div className="footer-top">
+            <div className="footer-top mt-5">
                 <div className="container">
                     <div className="row gy-4">
                         <div className="col-lg-5 col-md-12 footer-info">

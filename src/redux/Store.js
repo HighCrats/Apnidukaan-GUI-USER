@@ -4,7 +4,6 @@ import ProductSlice from "./Product-Slice";
 import UserSlice from "./User-Slice";
 import CartSlice from "./Cart-Slice";
 import DescriptionSlice from "./Description-Slice";
-
 import SellerSlice from "./Seller-Slice";
 
 const store = configureStore({
@@ -14,9 +13,7 @@ const store = configureStore({
         user: UserSlice,
         cart: CartSlice,
         descProduct : DescriptionSlice,
-
         sellerProduct : SellerSlice
-
     }
 });
 

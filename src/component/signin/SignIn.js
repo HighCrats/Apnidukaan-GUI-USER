@@ -8,7 +8,7 @@ import { setUser } from "../../redux/User-Slice";
 import { ToastContainer, toast } from "react-toastify";
 import apiPoint from "../../api/Web-Api";
 import 'react-toastify/dist/ReactToastify.css';
-import WithGoogle from "../googleSignup/Google";
+import WithGoogle from "../googleSignup/Google-HARSHITA";
 
 
 function SignIn() {
@@ -100,9 +100,9 @@ function SignIn() {
                             />
                             <br />
                             <WithGoogle />
-                            {/* <br />
-                            <Link to="#" style={{ fontSize: "13px", textDecoration: "underline" }} >forgot password ?</Link>
-                            <br /> */}
+                            <br />
+                            <Link to='/forgotPassword' style={{ fontSize: "13px", textDecoration: "underline" }} >forgot password ?</Link>
+                            <br />
                             <div>
                                 <button type="submit" className="btn btn-primary my-3 me-3">Sign In</button>
                                 <Link to="/signup" style={{ fontSize: "13px" }}> Create new account</Link>

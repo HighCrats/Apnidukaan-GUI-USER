@@ -3,6 +3,7 @@ import Header from "../header/Header";
 import axios from "axios";
 import apiPoint from "../../api/Web-Api"
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 
 function Sell() {
@@ -60,7 +61,7 @@ function Sell() {
       formData.set("price", price);
       formData.set("title", title);
       const response = await axios.post(apiPoint.SELLER_POST, formData);
-      window.alert("Your Product added successfully");
+      toast.success("Your Product added successfully");
     } else {
       setErrors(errors);
     }
@@ -70,6 +71,7 @@ function Sell() {
 
   return <>
     <Header />
+    <ToastContainer/>
     <div className="container mt-5 py-5 ">
       <div className="row p-4  border border-2 rounded-4 align-items-center justify-content-center">
         <div className="col-5">

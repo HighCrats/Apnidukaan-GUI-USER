@@ -3,10 +3,36 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import { useEffect, useRef } from "react";
 import '../description/descriptionStyle.css';
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import UserSlice from "../../redux/User-Slice";
+import apiPoint from "../../api/Web-Api";
+import axios from "axios";
 
 function New() {
 
     const { descProduct } = useSelector((state) => state.descProduct);
+    const users = useSelector((state) => state.user);
+    const navigate = useNavigate();
+
+    const send = async (event) => {
+        event.preventDefault();
+        window.alert("yha aya h 1");
+        let usersId = users.currentUser._id;
+        console.log(usersId);
+        if (usersId != null) {
+            window.alert("yha aya h 2");
+            const response = await axios.post(apiPoint.USER_SMS, {
+
+            }
+            );
+            toast.success("Message Sent");
+        }
+        else {
+            window.alert("yha aya h 3");
+            navigate("/signin");
+        }
+    }
 
     useEffect(() => { window.scrollTo(0, 0) }, []);
 
@@ -20,6 +46,8 @@ function New() {
     return <>
 
         <Header />
+
+        <ToastContainer />
 
         {/*  */}
 
@@ -96,7 +124,7 @@ function New() {
                                     </div>
                                 </div>
                                 <div className="buttons d-flex flex-row mt-5 gap-3">
-                                    <button style={{ fontWeight: '700' }} className="btn btn-outline-dark">Send Request</button>
+                                    <button style={{ fontWeight: '700' }} onClick={send} className="btn btn-outline-dark">Send Request</button>
                                 </div>
                             </div>
                         </div>

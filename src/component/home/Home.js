@@ -4,10 +4,10 @@ import Banner from "../banner/Banner";
 import Category from "../category/Category";
 import Header from "../header/Header";
 import Service from "../service/Service";
-import FeaturedProduct from "../featuredProduct/FeaturedProduct";
 import Footer from "../footer/Footer";
 import { fetchCategory } from "../../redux/Category-Slice";
 import { fetchProduct } from "../../redux/Product-Slice";
+import FeaturedProduct from "../featuredProduct/FeaturedProduct-HARSHITA";
 
 function Home() {
   useEffect(() => {
