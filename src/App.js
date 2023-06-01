@@ -6,18 +6,19 @@ import Contact from './component/contact/Contact';
 import Subscription from './component/subscription/Subscription';
 import Cart from './component/cart/Cart';
 import Order from './component/order/Order';
-import SignUp from './component/signup/SignUp';
 import SignIn from './component/signin/SignIn';
-import ResetPassword from './component/resetPassword/ResetPassword';
 import Sales from './component/sell/sales';
 import Sell from './component/sell/Sell';
 
 import CategorySecond from './component/category/category2';
 
 import MyProduct from './component/sell/MyProduct';
-import MyProductDescription from './component/description/MyProductDescription';
 import New from './component/description/newDescription';
 import CategorySecond from './component/category/NewCategory';
+import SignUp from './component/signup/SignUp-HARSHITA';
+import MyProductDescription from './component/description/MyProductDescription-HARSHITA';
+import ForgetPassword from './component/forgotPassword/forgotPassword';
+import ChangePassword from './component/forgotPassword/changePassword';
 
 
 function App() {
@@ -30,21 +31,24 @@ function App() {
       <Route path='/subscription' element={<Subscription />} />
       <Route path='/cart' element={<Cart />} />
       <Route path='/order' element={<Order />} />
+
+     
       <Route path='/signup' element={<SignUp />} />
 
       <Route path='/description' element={<Description/>} />
       
-      <Route path='/categorySecond' element={<CategorySecond/>}/>
-    
+     
       <Route path='/signin' element={<SignIn />} />
       <Route path='/myproduct' element={<MyProduct />} />
-      <Route path='/myproductdescription' element={<MyProductDescription />} />
+      <Route path='/myproductdescription' element={<MyProductDescription/>}/>
       <Route path='/sales' element={<Sales />} />
       <Route path='/sell' element={<Sell />} />
       <Route path='/new' element={<New />} />
-      <Route path='/reset-password' element={<ResetPassword />} />
       <Route path='/categorySecond' element={<CategorySecond/>}/>
 
+      <Route path='/forgotPassword' element={<ForgetPassword/>}/>
+      <Route path='/changePassword' element={<ChangePassword/>}/>
+      
 
     </Routes>
   </>

@@ -11,8 +11,11 @@ import "../stylesheet/cart.css";
 function Cart() {
 
     const users = useSelector((state) => state.user);
+    
     let dispatch = useDispatch();
+    
     let usersId = users.currentUser._id;
+    
     const loadCartProducts = async () => {
         try {
             let response = await axios.post(apiPoint.FETCH_CART, { userId: usersId });
@@ -28,12 +31,13 @@ function Cart() {
     }, []);
 
     const cartProduct = useSelector((state) => state.cart.cartItems);
+    
     let totalAmount = 0;
 
     const removeFromCart = async(productId) => {
         alert(productId);
         let response = await axios.post(apiPoint.REMOVE_CART_ITEM, { userId: usersId, productId : productId });
-        // dispatch(updateCartItems(response.data)); 
+        dispatch(updateCartItems(response.data)); 
         console.log(response.data)
     }
 

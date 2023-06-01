@@ -22,4 +22,5 @@ const SellerSlice = createSlice({
 });
 
 export const {setSellerProductList} = SellerSlice.actions;
+
 export default SellerSlice.reducer;
