@@ -44,7 +44,10 @@ function SignIn() {
                     password
                 });
                 dispatch(setUser(response.data.user));
-                navigate("/");
+                toast.success("Sign In Success");
+                setTimeout(() => {
+                    navigate("/");
+                }, 2000);
             }
             else {
                 setErrors(errors);

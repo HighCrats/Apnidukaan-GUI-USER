@@ -15,7 +15,6 @@ function Header() {
 
     const userSignOut = () => {
         dispatch(signOut());
-        navigate('/');
     }
 
     const loadProducts = async (category) => {
@@ -89,7 +88,7 @@ function Header() {
                                 </Link>
                             </li>
                             <li>
-                                <Link className="nav-link scrollto" onClick={userSignOut}>
+                                <Link to='/' className="nav-link scrollto" onClick={userSignOut}>
                                     Log Out
                                 </Link>
                             </li>

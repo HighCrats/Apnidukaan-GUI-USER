@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import '../description/descriptionStyle.css';
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -15,21 +15,21 @@ function New() {
     const users = useSelector((state) => state.user);
     const navigate = useNavigate();
 
+    const [wordStatus, setWordStatus] = useState(true);
+
     const send = async (event) => {
         event.preventDefault();
-        window.alert("yha aya h 1");
-        let usersId = users.currentUser._id;
-        console.log(usersId);
-        if (usersId != null) {
-            window.alert("yha aya h 2");
+        if (users.currentUser != null) {
+            let name = users.currentUser.name;
+            let contact = users.currentUser.contact;
             const response = await axios.post(apiPoint.USER_SMS, {
-
+                name: name, contact: contact
             }
             );
+            setWordStatus(false);
             toast.success("Message Sent");
         }
         else {
-            window.alert("yha aya h 3");
             navigate("/signin");
         }
     }
@@ -124,7 +124,7 @@ function New() {
                                     </div>
                                 </div>
                                 <div className="buttons d-flex flex-row mt-5 gap-3">
-                                    <button style={{ fontWeight: '700' }} onClick={send} className="btn btn-outline-dark">Send Request</button>
+                                    <button disabled={!wordStatus} style={{ fontWeight: '700' }} onClick={send} className="btn btn-outline-dark">{wordStatus ? "Send Request" : "Successfull"}</button>
                                 </div>
                             </div>
                         </div>
