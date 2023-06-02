@@ -1,6 +1,6 @@
 {
   "name": "user_gui",
-  "proxy": "http://localhost:3010",
+  "proxy": "https://backend-ffna.onrender.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
