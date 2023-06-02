@@ -49,7 +49,11 @@ function SignUp() {
           password,
           contact,
         });
-        navigate("/signin");
+        toast.success("Sign Up Success");
+        setTimeout(()=>{
+          navigate("/signin");
+        },3000);
+        
       } else {
         setErrors(errors);
       }
