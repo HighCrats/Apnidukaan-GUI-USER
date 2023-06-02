@@ -13,7 +13,6 @@ const apiPoint = {
   USER_CHECK:'/user/checkUser',
   FORGOTT_PASSWORD: '/user/updatePassword',
   USER_SMS:'/smsUser/sms'
-
 };
 
 
