@@ -13,8 +13,11 @@ const apiPoint = {
   USER_CHECK:'https://backend-ffna.onrender.com/user/checkUser',
   FORGOTT_PASSWORD: 'https://backend-ffna.onrender.com/user/updatePassword',
   USER_SMS:'https://backend-ffna.onrender.com/smsUser/sms'
+
 };
 
-export default apiPoint;
+
+  export default apiPoint;
+
 
 
