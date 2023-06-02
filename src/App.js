@@ -10,8 +10,6 @@ import SignIn from './component/signin/SignIn';
 import Sales from './component/sell/sales';
 import Sell from './component/sell/Sell';
 
-import CategorySecond from './component/category/category2';
-
 import MyProduct from './component/sell/MyProduct';
 import New from './component/description/newDescription';
 import CategorySecond from './component/category/NewCategory';
