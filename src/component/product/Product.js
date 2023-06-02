@@ -46,7 +46,7 @@ function Product() {
 
     const loadProducts = async () => {
         try {
-            let response = await axios.get("https://backend-ffna.onrender.com/product/list");
+            let response = await axios.get(apiPoint.PRODUCT_DATA + `?page=${page}`);
             if (response.data.status) {
                 setProductList([...productList, ...response.data.result]);
                 setPage(page + 1);
