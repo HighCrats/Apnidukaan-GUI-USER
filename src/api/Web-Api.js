@@ -1,7 +1,7 @@
 
 const apiPoint = {
   PRODUCT_LIST: "/https://backend-ffna.onrender.com/product/recent-product",
-  PRODUCT_DATA: "/https://backend-ffna.onrender.com/product/list",
+  PRODUCT_DATA: "/product/list",
   CATEGORY_LIST: "/https://backend-ffna.onrender.com/category/list",
   USER_CONTACT: "/https://backend-ffna.onrender.com/contactUser/contact",
   USER_SIGNIN: "/https://backend-ffna.onrender.com/user/signin",
