@@ -1,7 +1,55 @@
+import { Link } from "react-router-dom";
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
-
+import axios from "axios";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 function Subscription() {
+    const user = useSelector(state=>state.user); 
+    const displayRazorpay = async (value) => {
+        let response = await axios.post("http://localhost:3010/subscription/addSubscription", { subscription: value })
+
+        let data = response.data
+        const options = {
+            key: "rzp_test_Vhg1kq9b86udsY",
+            currency: data.currency,
+            amount: data.amount,
+            name: "Learning To Code Online",
+            description: "Test Wallet Transaction",
+            image: "https://tse2.mm.bing.net/th?id=OIP.4p7ztcUW4gAM6_1VGZ1EVwHaIj&pid=Api&P=0",
+            order_id: data.id,
+            handler: function (response) {
+                alert(response.razorpay_payment_id);
+                alert(response.razorpay_order_id);
+                alert(response.razorpay_signature);
+            },
+            prefill: {
+                name: user.currentUser.name,
+                email: user.currentUser.email,
+                contact: user.currentUser.contact,
+            },
+        };
+        const paymentObject = new window.Razorpay(options);
+        paymentObject.open();
+    }
+
+    const loadScript = (src) => {
+        return new Promise((resolve) => {
+            const script = document.createElement("script");
+            script.src = src;
+            script.onload = () => {
+                resolve(true);
+            };
+            script.onerror = () => {
+                resolve(false);
+            };
+            document.body.appendChild(script);
+        });
+    };
+
+    useEffect(() => {
+        loadScript("https://checkout.razorpay.com/v1/checkout.js");
+    });
 
     return <>
 
@@ -24,7 +72,7 @@ function Subscription() {
                             <span className="featured">Featured</span>
                             <h3 style={{ color: "#07d5c0" }}>Free Plan</h3>
                             <div className="price">
-                                <sup>$</sup>0<span> / month</span>
+                                <sup>$</sup>30<span> / 1 month</span>
                             </div>
                             <img
                                 src="assets/img/pricing-free.png"
@@ -36,9 +84,7 @@ function Subscription() {
                                 <li>Nec feugiat nisl</li>
                                 <li>Nulla at volutpat dola</li>
                             </ul>
-                            <a href="#" className="btn-buy">
-                                Buy Now
-                            </a>
+                            <Link onClick={() => displayRazorpay(30)} className="btn-buy">Buy Now</Link>
                         </div>
                     </div>
                     <div
@@ -50,7 +96,7 @@ function Subscription() {
                             <span className="featured">Featured</span>
                             <h3 style={{ color: "#65c600" }}>Starter Plan</h3>
                             <div className="price">
-                                <sup>$</sup>19<span> / month</span>
+                                <sup>$</sup>60<span> / 2 month</span>
                             </div>
                             <img
                                 src="assets/img/pricing-starter.png"
@@ -62,9 +108,9 @@ function Subscription() {
                                 <li>Nec feugiat nisl</li>
                                 <li>Nulla at volutpat dola</li>
                             </ul>
-                            <a href="#" className="btn-buy">
+                            <Link onClick={() => displayRazorpay(60)} className="btn-buy">
                                 Buy Now
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div
@@ -76,7 +122,7 @@ function Subscription() {
                             <span className="featured">Featured</span>
                             <h3 style={{ color: "#ff901c" }}>Business Plan</h3>
                             <div className="price">
-                                <sup>$</sup>29<span> / month</span>
+                                <sup>$</sup>90<span> / 3 month</span>
                             </div>
                             <img
                                 src="assets/img/pricing-business.png"
@@ -88,9 +134,9 @@ function Subscription() {
                                 <li>Nec feugiat nisl</li>
                                 <li>Nulla at volutpat dola</li>
                             </ul>
-                            <a href="#" className="btn-buy">
+                            <Link onClick={() => displayRazorpay(90)} className="btn-buy">
                                 Buy Now
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div
@@ -102,7 +148,7 @@ function Subscription() {
                             <span className="featured">Featured</span>
                             <h3 style={{ color: "#ff0071" }}>Ultimate Plan</h3>
                             <div className="price">
-                                <sup>$</sup>49<span> / month</span>
+                                <sup>$</sup>120<span> / 4 month</span>
                             </div>
                             <img
                                 src="assets/img/pricing-ultimate.png"
@@ -114,9 +160,9 @@ function Subscription() {
                                 <li>Nec feugiat nisl</li>
                                 <li>Nulla at volutpat dola</li>
                             </ul>
-                            <a href="#" className="btn-buy">
+                            <Link onClick={() => displayRazorpay(120)} className="btn-buy">
                                 Buy Now
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -126,8 +172,11 @@ function Subscription() {
 
         <Footer />
 
+
+
     </>
 
 }
 
 export default Subscription;
+

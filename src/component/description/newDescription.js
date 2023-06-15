@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import { useEffect, useRef, useState } from "react";
@@ -8,13 +8,15 @@ import { ToastContainer, toast } from "react-toastify";
 import UserSlice from "../../redux/User-Slice";
 import apiPoint from "../../api/Web-Api";
 import axios from "axios";
+import { setRequestProduct } from "../../redux/Request-Slice";
 
 function New() {
 
     const { descProduct } = useSelector((state) => state.descProduct);
     const users = useSelector((state) => state.user);
     const navigate = useNavigate();
-
+    const {requestProduct}= useSelector((state)=>state.requestProduct);
+    const dispatch = useDispatch();
     const [wordStatus, setWordStatus] = useState(true);
 
     const send = async (event) => {
@@ -22,10 +24,15 @@ function New() {
         if (users.currentUser != null) {
             let name = users.currentUser.name;
             let contact = users.currentUser.contact;
+            let email = users.currentUser.email;
+            let productId = descProduct._id;
+            dispatch(setRequestProduct([...requestProduct,{productId : descProduct}]));
             const response = await axios.post(apiPoint.USER_SMS, {
                 name: name, contact: contact
             }
             );
+            const response2 = await axios.post("http://localhost:3010/request/saveRequest",{email : email , productId : productId})
+            console.log(response2);
             setWordStatus(false);
             toast.success("Message Sent");
         }

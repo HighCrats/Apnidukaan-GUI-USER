@@ -17,6 +17,8 @@ import SignUp from './component/signup/SignUp-HARSHITA';
 import MyProductDescription from './component/description/MyProductDescription-HARSHITA';
 import ForgetPassword from './component/forgotPassword/forgotPassword';
 import ChangePassword from './component/forgotPassword/changePassword';
+import ProductByCategory from './component/productByCategory/productByCategory';
+import Request from './component/request/Request';
 
 
 function App() {
@@ -29,8 +31,8 @@ function App() {
       <Route path='/subscription' element={<Subscription />} />
       <Route path='/cart' element={<Cart />} />
       <Route path='/order' element={<Order />} />
-
-     
+      <Route path='/categoryClick' element={<ProductByCategory/>} />
+      <Route path='/request' element={<Request/>}/>
       <Route path='/signup' element={<SignUp />} />
       
      

@@ -23,18 +23,13 @@ function Header() {
         dispatch(signOut());
     }
 
-    const loadProducts = async (category) => {
-
-
-    };
-
 
     return <>
         
         {/* ======= Header ======= */}
         <header id="header" className="header fixed-top">
             <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
-                <a href="/" className="logo d-flex align-items-center">
+                <a className="logo d-flex align-items-center">
                     <img src="assets/img/logo.png" alt="" />
                     <span>APNI DUKAAN</span>
                 </a>
@@ -53,11 +48,11 @@ function Header() {
                             <ul>
                                 <div className="navbar-nav w-100">
                                    
-                                    {!error && categoryList.map((category, index) => <a key={index} href="" className="nav-item nav-link">
+                                    {!error && categoryList.map((category, index) => <span key={index}  className="nav-item nav-link">
 
-                                        <Link onClick={() => loadProducts(category.name)} to="/categorySecond" > {category.name.toUpperCase()}</Link>
+                                        <Link to="/categoryClick" state={{ name: category.name }} > {category.name.toUpperCase()}</Link>
 
-                                    </a>)}
+                                    </span>)}
                                 </div>
                             </ul>
 
@@ -75,16 +70,6 @@ function Header() {
                         </li>
 
                         {currentUser && <>
-                            {/* <li>
-                                <Link to="/cart" className="nav-link scrollto">
-                                    Cart
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/order" className="nav-link scrollto">
-                                    Order
-                                </Link>
-                            </li> */}
                             <li>
                                 <Link to="/subscription" className="nav-link scrollto">
                                     Subscription
@@ -92,7 +77,12 @@ function Header() {
                             </li>
                             <li>
                                 <Link className="nav-link scrollto" to="/sell">
-                                    Sell Profile
+                                    Sell
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to='/request' className="nav-link scrollto">
+                                    Requests
                                 </Link>
                             </li>
                             <li>

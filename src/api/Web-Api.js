@@ -2,6 +2,7 @@ const url = "https://backend-ffna.onrender.com";
 const apiPoint = {
   PRODUCT_LIST: url+"/product/recent-product",
   PRODUCT_DATA: url+"/product/list",
+  PRODUCT_ALL: url+"/product/ListOfProduct",
   CATEGORY_LIST: url+"/category/list",
   USER_CONTACT: url+"/contactUser/contact",
   USER_SIGNIN: url+"/user/signin",
