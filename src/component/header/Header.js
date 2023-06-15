@@ -35,14 +35,14 @@ function Header() {
         {/* ======= Header ======= */}
         <header id="header" className="header fixed-top">
             <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
-                <a href="/" className="logo d-flex align-items-center">
+                <a  className="logo d-flex align-items-center">
                     <img src="assets/img/logo.png" alt="" />
                     <span>APNI DUKAAN</span>
                 </a>
                 <nav id="navbar" className="navbar">
                     <ul>
                         <li>
-                            <Link to="/" className="nav-link scrollto active">
+                            <Link  to='/' className="nav-link scrollto active">
                                 Home
                             </Link>
                         </li>
@@ -54,11 +54,11 @@ function Header() {
                             <ul>
                                 <div className="navbar-nav w-100">
                                    
-                                    {!error && categoryList.map((category, index) => <a key={index} href="" className="nav-item nav-link">
+                                    {!error && categoryList.map((category, index) => <span key={index} className="nav-item nav-link">
 
-                                        <Link onClick={() => loadProducts(category.name)} to="/categorySecond" > {category.name.toUpperCase()}</Link>
+                                        <Link state={{name:category.name}} to="/categoryClick" > {category.name.toUpperCase()}</Link>
 
-                                    </a>)}
+                                    </span>)}
                                 </div>
                             </ul>
 

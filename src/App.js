@@ -9,8 +9,8 @@ import Order from './component/order/Order';
 import SignIn from './component/signin/SignIn';
 import Sales from './component/sell/sales';
 import Sell from './component/sell/Sell';
+import ProductByCategory from './component/productByCategory/productByCategory'
 
-import CategorySecond from './component/category/category2';
 
 import MyProduct from './component/sell/MyProduct';
 import New from './component/description/newDescription';
@@ -35,9 +35,8 @@ function App() {
      
       <Route path='/signup' element={<SignUp />} />
 
-      <Route path='/description' element={<Description/>} />
-      
-     
+    
+     <Route path='/categoryClick' element={<ProductByCategory/>}/>
       <Route path='/signin' element={<SignIn />} />
       <Route path='/myproduct' element={<MyProduct />} />
       <Route path='/myproductdescription' element={<MyProductDescription/>}/>

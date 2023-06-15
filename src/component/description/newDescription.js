@@ -5,7 +5,6 @@ import { useEffect, useRef } from "react";
 import '../description/descriptionStyle.css';
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import UserSlice from "../../redux/User-Slice";
 import apiPoint from "../../api/Web-Api";
 import axios from "axios";
 
@@ -17,11 +16,9 @@ function New() {
 
     const send = async (event) => {
         event.preventDefault();
-        window.alert("yha aya h 1");
         let usersId = users.currentUser._id;
         console.log(usersId);
         if (usersId != null) {
-            window.alert("yha aya h 2");
             const response = await axios.post(apiPoint.USER_SMS, {
 
             }
@@ -29,7 +26,6 @@ function New() {
             toast.success("Message Sent");
         }
         else {
-            window.alert("yha aya h 3");
             navigate("/signin");
         }
     }
