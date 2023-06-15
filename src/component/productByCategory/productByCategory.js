@@ -53,11 +53,11 @@ function ProductByCategory() {
                             categoryProducts?.map((product, index) => (
                                 <div key={index} className="col-12 col-md-6 col-lg-4 p-4" >
 
-
                                     <div className="card border d-flex">
                                         <img className="card-img p-3" style={{ height: '300px', width: "90%", borderRadius: ' 20%', margin: 'auto' }} src={product.thumbnail} alt="Vans" />
                                         <div className="card-body" style={{ textAlign: 'center' }}>
                                             <h4 style={{ fontWeight: '800' }} className="card-title">{product.title.substring(0, 20).toUpperCase()}</h4>
+
                                             <h6 style={{ fontWeight: '800' }} className="card-subtitle mb-2 text-muted">Category: {product.categoryname}</h6>
                                             <p style={{ fontWeight: '700' }} className="card-text">
                                                 {product.description.substring(0, 30)} ...</p>

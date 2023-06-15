@@ -15,6 +15,7 @@ function Sell() {
   const [imageSrc, setImageSrc] = useState("");
 
 
+  
   useEffect(() => { window.scrollTo(0, 0) }, [])
 
   function getFile(event) {
@@ -50,10 +51,12 @@ function Sell() {
   };
 
 
-  const sellSubmit = async (event) => {
 
+  const sellSubmit = async (event) => {
+    
     event.preventDefault();
     const errors = validateInputs();
+    
     if (Object.keys(errors).length === 0) {
       const formData = new FormData();
       formData.append("bill", bill);

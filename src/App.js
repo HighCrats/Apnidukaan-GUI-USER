@@ -4,11 +4,10 @@ import Home from './component/home/Home';
 import Product from './component/product/Product';
 import Contact from './component/contact/Contact';
 import Subscription from './component/subscription/Subscription';
-import Cart from './component/cart/Cart';
-import Order from './component/order/Order';
 import SignIn from './component/signin/SignIn';
 import Sales from './component/sell/sales';
 import Sell from './component/sell/Sell';
+import ProductByCategory from './component/productByCategory/productByCategory'
 
 import MyProduct from './component/sell/MyProduct';
 import New from './component/description/newDescription';
@@ -17,7 +16,6 @@ import SignUp from './component/signup/SignUp-HARSHITA';
 import MyProductDescription from './component/description/MyProductDescription-HARSHITA';
 import ForgetPassword from './component/forgotPassword/forgotPassword';
 import ChangePassword from './component/forgotPassword/changePassword';
-import ProductByCategory from './component/productByCategory/productByCategory';
 import Request from './component/request/Request';
 
 
@@ -34,8 +32,8 @@ function App() {
       <Route path='/categoryClick' element={<ProductByCategory/>} />
       <Route path='/request' element={<Request/>}/>
       <Route path='/signup' element={<SignUp />} />
-      
-     
+
+     <Route path='/categoryClick' element={<ProductByCategory/>}/>
       <Route path='/signin' element={<SignIn />} />
       <Route path='/myproduct' element={<MyProduct />} />
       <Route path='/myproductdescription' element={<MyProductDescription/>}/>
