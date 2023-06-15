@@ -21,13 +21,7 @@ function Header() {
 
     const userSignOut = () => {
         dispatch(signOut());
-        navigate('/');
     }
-
-    const loadProducts = async (category) => {
-
-
-    };
 
 
     return <>
@@ -35,6 +29,7 @@ function Header() {
         {/* ======= Header ======= */}
         <header id="header" className="header fixed-top">
             <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
+
                 <a  className="logo d-flex align-items-center">
                     <img src="assets/img/logo.png" alt="" />
                     <span>APNI DUKAAN</span>
@@ -53,10 +48,11 @@ function Header() {
                             </a>
                             <ul>
                                 <div className="navbar-nav w-100">
-                                   
+                      
                                     {!error && categoryList.map((category, index) => <span key={index} className="nav-item nav-link">
 
                                         <Link state={{name:category.name}} to="/categoryClick" > {category.name.toUpperCase()}</Link>
+
 
                                     </span>)}
                                 </div>
@@ -76,16 +72,6 @@ function Header() {
                         </li>
 
                         {currentUser && <>
-                            {/* <li>
-                                <Link to="/cart" className="nav-link scrollto">
-                                    Cart
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/order" className="nav-link scrollto">
-                                    Order
-                                </Link>
-                            </li> */}
                             <li>
                                 <Link to="/subscription" className="nav-link scrollto">
                                     Subscription
@@ -93,7 +79,12 @@ function Header() {
                             </li>
                             <li>
                                 <Link className="nav-link scrollto" to="/sell">
-                                    Sell Profile
+                                    Sell
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to='/request' className="nav-link scrollto">
+                                    Requests
                                 </Link>
                             </li>
                             <li>
@@ -102,7 +93,7 @@ function Header() {
                                 </Link>
                             </li>
                             <li>
-                                <Link className="nav-link scrollto" onClick={userSignOut}>
+                                <Link to='/' className="nav-link scrollto" onClick={userSignOut}>
                                     Log Out
                                 </Link>
                             </li>

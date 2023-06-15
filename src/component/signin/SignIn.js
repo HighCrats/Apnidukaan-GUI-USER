@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import apiPoint from "../../api/Web-Api";
 import 'react-toastify/dist/ReactToastify.css';
 import WithGoogle from "../googleSignup/Google-HARSHITA";
+import { setRequestProduct } from "../../redux/Request-Slice";
 
 
 function SignIn() {
@@ -39,12 +40,15 @@ function SignIn() {
             event.preventDefault();
             const errors = validateInputs();
             if (Object.keys(errors).length === 0) {
-                const response = await axios.post(apiPoint.USER_SIGNIN, {
-                    email,
-                    password
-                });
+                const response = await axios.post(apiPoint.USER_SIGNIN, {email,password});
+                const response1 = await axios.post("http://localhost:3010/request/getRequest",{email : email})
                 dispatch(setUser(response.data.user));
-                navigate("/");
+                let arr = [...response1.data.result]
+                dispatch(setRequestProduct(arr));
+                toast.success("Sign In Success");
+                setTimeout(() => {
+                    navigate("/");
+                }, 2000);
             }
             else {
                 setErrors(errors);

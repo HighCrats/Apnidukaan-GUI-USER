@@ -1,4 +1,3 @@
-
 const apiPoint = {
   PRODUCT_LIST: "/product/recent-product",
   PRODUCT_DATA: "/product/list",
@@ -13,11 +12,8 @@ const apiPoint = {
   USER_CHECK:'/user/checkUser',
   FORGOTT_PASSWORD: '/user/updatePassword',
   USER_SMS:'/smsUser/sms',
-  TAKE_SUBSCRIPTION:'/subscription/Subscription',
-  SHOW_SUBSCRIPTION:'/subscription/showSubscription',
-  UPDATE_BALANCE:'/subscription/updateBalance',
-  EMAIL_SEND:'/subscription/sendotp',
   PRICE:'/product/price'
+
 };
 
 

@@ -13,16 +13,19 @@ function ChangePassword() {
     const password = useRef(null);
     const confirmPassword = useRef(null);
 
-    const updatePassword = async () => {
+    const updatePassword = async (event) => {
+        event.preventDefault();
         if (password.current.value == confirmPassword.current.value) {
             const response = await axios.post(apiEndPoint.FORGOTT_PASSWORD, { email: email, password: password.current.value });
-            if (response.data.status) {
-                window.alert('Password Updated succefully...');
-                navigate('/signin');
+            if (response.status) {
+                toast.success("Password Updated");
+                setTimeout(()=>{
+                    navigate('/signin');
+                },5000); 
             }
         }
         else
-            toast.error('Password does not metch...');
+            toast.error('Password does not match...');
     }
 
     return <>

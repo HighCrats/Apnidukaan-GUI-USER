@@ -1,28 +1,41 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import '../description/descriptionStyle.css';
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import apiPoint from "../../api/Web-Api";
 import axios from "axios";
+import { setRequestProduct } from "../../redux/Request-Slice";
 
 function New() {
 
     const { descProduct } = useSelector((state) => state.descProduct);
     const users = useSelector((state) => state.user);
     const navigate = useNavigate();
+    const {requestProduct}= useSelector((state)=>state.requestProduct);
+    const dispatch = useDispatch();
+    const [wordStatus, setWordStatus] = useState(true);
 
     const send = async (event) => {
         event.preventDefault();
-        let usersId = users.currentUser._id;
-        console.log(usersId);
-        if (usersId != null) {
-            const response = await axios.post(apiPoint.USER_SMS, {
 
+        if (users.currentUser != null) {
+            let name = users.currentUser.name;
+            let contact = users.currentUser.contact;
+            let email = users.currentUser.email;
+            let productId = descProduct._id;
+            dispatch(setRequestProduct([...requestProduct,{productId : descProduct}]));
+        let usersId = users.currentUser._id;
+        if (usersId != null) {
+
+            const response = await axios.post(apiPoint.USER_SMS, {
+                name: name, contact: contact
             }
             );
+            const response2 = await axios.post("http://localhost:3010/request/saveRequest",{email : email , productId : productId})
+            setWordStatus(false);
             toast.success("Message Sent");
         }
         else {
@@ -120,7 +133,7 @@ function New() {
                                     </div>
                                 </div>
                                 <div className="buttons d-flex flex-row mt-5 gap-3">
-                                    <button style={{ fontWeight: '700' }} onClick={send} className="btn btn-outline-dark">Send Request</button>
+                                    <button disabled={!wordStatus} style={{ fontWeight: '700' }} onClick={send} className="btn btn-outline-dark">{wordStatus ? "Send Request" : "Successfull"}</button>
                                 </div>
                             </div>
                         </div>
