@@ -8,7 +8,6 @@ import { ToastContainer, toast } from "react-toastify";
 import apiPoint from "../../api/Web-Api";
 import axios from "axios";
 import { setRequestProduct } from "../../redux/Request-Slice";
-import apiPoint from "../../api/Web-Api";
 
 function New() {
 
