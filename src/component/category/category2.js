@@ -21,7 +21,6 @@ function CategorySecond() {
     const loadProducts = async (category) => {
     let response = await axios.post(apiPoint.PRODUCT_BY_CATEGORY,{categoryname:category});
     setCategoryProducts(response.data.result);
-    console.log(response);
     return response.data.result && window.scrollTo(900, 900) 
     };
 
@@ -42,7 +41,6 @@ function CategorySecond() {
             toast.success(response.data.message);
         }
         else {
-            //toast.warning("You must have to login first");
             navigate("/signin");
         }
     }

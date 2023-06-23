@@ -42,7 +42,6 @@ function Description() {
     try {
       event.preventDefault();
       const response = await axios.post(apiPoint.BUY_NOW, formData);
-      window.alert("Order Placed Successfully");
       setFormData({ username: "", email: "",address:"", contact: "", date: "", paymentMode: "", TotalAmount: "", users_id: "" });
       setModalIsOpen(false);
     } catch (err) {

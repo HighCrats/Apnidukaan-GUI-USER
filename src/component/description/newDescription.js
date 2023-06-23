@@ -8,13 +8,14 @@ import { ToastContainer, toast } from "react-toastify";
 import apiPoint from "../../api/Web-Api";
 import axios from "axios";
 import { setRequestProduct } from "../../redux/Request-Slice";
+import apiPoint from "../../api/Web-Api";
 
 function New() {
 
     const { descProduct } = useSelector((state) => state.descProduct);
     const users = useSelector((state) => state.user);
     const navigate = useNavigate();
-    const {requestProduct}= useSelector((state)=>state.requestProduct);
+    const { requestProduct } = useSelector((state) => state.requestProduct);
     const dispatch = useDispatch();
     const [wordStatus, setWordStatus] = useState(true);
 
@@ -26,17 +27,21 @@ function New() {
             let contact = users.currentUser.contact;
             let email = users.currentUser.email;
             let productId = descProduct._id;
-            dispatch(setRequestProduct([...requestProduct,{productId : descProduct}]));
-        let usersId = users.currentUser._id;
-        if (usersId != null) {
+            dispatch(setRequestProduct([...requestProduct, { productId: descProduct }]));
+            let usersId = users.currentUser._id;
+            if (usersId != null) {
 
-            const response = await axios.post(apiPoint.USER_SMS, {
-                name: name, contact: contact
+                const response = await axios.post(apiPoint.USER_SMS, {
+                    name: name, contact: contact
+                }
+                );
+                const response2 = await axios.post(apiPoint.REQUEST_SAVE, { email: email, productId: productId })
+                setWordStatus(false);
+                toast.success("Message Sent");
             }
-            );
-            const response2 = await axios.post("http://localhost:3010/request/saveRequest",{email : email , productId : productId})
-            setWordStatus(false);
-            toast.success("Message Sent");
+            else {
+                navigate("/signin");
+            }
         }
         else {
             navigate("/signin");

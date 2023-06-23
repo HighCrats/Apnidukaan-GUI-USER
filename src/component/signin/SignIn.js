@@ -41,7 +41,7 @@ function SignIn() {
             const errors = validateInputs();
             if (Object.keys(errors).length === 0) {
                 const response = await axios.post(apiPoint.USER_SIGNIN, {email,password});
-                const response1 = await axios.post("http://localhost:3010/request/getRequest",{email : email})
+                const response1 = await axios.post(apiPoint.REQUEST_GET,{email : email})
                 dispatch(setUser(response.data.user));
                 let arr = [...response1.data.result]
                 dispatch(setRequestProduct(arr));

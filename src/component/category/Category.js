@@ -26,26 +26,6 @@ function Category() {
         dispatch(setDescProduct(product));
     }
 
-    const users = useSelector((state) => state.user);
-
-    const navigate = useNavigate();
-
-    let cartItem = []
-    const addToCart = async (product) => {
-        if (users.currentUser != null) {
-            let productId = product._id;
-            let usersId = users.currentUser._id;
-            cartItem = [...cartItem, product]
-            console.log(cartItem);
-            let response = await axios.post(apiPoint.ADD_TO_CART, { usersId: usersId, cartItem: cartItem, productId: productId });
-            toast.success(response.data.message);
-        }
-        else {
-            //toast.warning("You must have to login first");
-            navigate("/signin");
-        }
-    }
-
     return (
         <React.Fragment>
             {/* ======= Values Section ======= */}

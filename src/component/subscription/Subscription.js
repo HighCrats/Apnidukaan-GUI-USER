@@ -4,10 +4,11 @@ import Header from "../header/Header";
 import axios from "axios";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import apiPoint from "../../api/Web-Api";
 function Subscription() {
     const user = useSelector(state=>state.user); 
     const displayRazorpay = async (value) => {
-        let response = await axios.post("http://localhost:3010/subscription/addSubscription", { subscription: value })
+        let response = await axios.post(apiPoint.SUBSCRIPTION_ADD, { subscription: value })
 
         let data = response.data
         const options = {
